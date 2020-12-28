@@ -10,17 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
-    <!--
-    =========================================================
-    * ArchitectUI HTML Theme Dashboard - v1.0.0
-    =========================================================
-    * Product Page: https://dashboardpack.com
-    * Copyright 2019 DashboardPack (https://dashboardpack.com)
-    * Licensed under MIT (https://github.com/DashboardPack/architectui-html-theme-free/blob/master/LICENSE)
-    =========================================================
-    * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-    -->
-<link href="{{ asset('backend/css/main.css') }}" rel="stylesheet"></head>
+
+    <link href="{{ asset('backend/icofont/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/css/architect-css.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/vendor/icofont/icofont.min.css') }}" rel="stylesheet">
+
+</head>
 <body>
     <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
         <div class="app-header header-shadow">
@@ -439,31 +434,14 @@
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">UI Components</li>
-                                <li
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                >
+                                <li>
                                     <a href="#">
-                                        <i class="metismenu-icon pe-7s-diamond"></i>
+                                        {{-- <i class="metismenu-icon pe-7s-diamond"></i> --}}
                                         Elements
-                                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                                        {{-- <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i> --}}
+                                        <i class="icofont-curved-down"></i>
                                     </a>
-                                    <ul
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                    >
+                                    <ul>
                                         <li>
                                             <a href="elements-buttons-standard.html">
                                                 <i class="metismenu-icon"></i>
@@ -514,37 +492,13 @@
                                         </li>
                                     </ul>
                                 </li>
-                                <li
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                >
+                                <li>
                                     <a href="#">
                                         <i class="metismenu-icon pe-7s-car"></i>
                                         Components
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
-                                    <ul
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                    >
+                                    <ul>
                                         <li>
                                             <a href="components-tabs.html">
                                                 <i class="metismenu-icon">
@@ -1370,5 +1324,6 @@
                 <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
         </div>
     </div>
-<script type="text/javascript" src="{{ asset('backend/js/main.js') }}"></script></body>
+<script type="text/javascript" src="{{ asset('backend/js/main.js') }}"></script>
+</body>
 </html>

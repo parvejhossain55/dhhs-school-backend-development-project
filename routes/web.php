@@ -30,3 +30,6 @@ Route::view('/contact', 'frontend.contact');
 Route::get('/backends', function(){
     return view('layouts.backend');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
