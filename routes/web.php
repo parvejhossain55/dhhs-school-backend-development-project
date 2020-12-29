@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.home');
 });
+    
 Route::view('/about', 'frontend.about');
 Route::view('/head-message', 'frontend.head-message');
 Route::view('/admission-details', 'frontend.admission-details');
@@ -26,10 +29,20 @@ Route::view('/photo-gallery', 'frontend.photo-gallery');
 Route::view('/contact', 'frontend.contact');
 
 
+
 // Bakcend Route Start
 Route::get('/backends', function(){
     return view('layouts.backend');
 });
+
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::middleware('auth')->group(function() {
+
+    // Route::get('/home', [HomeController::class, 'index'])->name('home');
+    Route::get('/total/admission', [HomeController::class, 'create'])->name('total.admission');
+    Route::get('/add/notice', [HomeController::class, 'addNotice'])->name('add.notice');
+    Route::get('/add/photo', [HomeController::class, 'addPhoto'])->name('add.photo');
+
+});
