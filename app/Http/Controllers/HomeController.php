@@ -31,12 +31,6 @@ class HomeController extends Controller
         return view('backend.total-admission');
     }
 
-    // Add notice page view
-    public function addNotice()
-    {
-        return view('backend.add-notice');
-    }
-
     // Add photo page view
     public function addPhoto()
     {

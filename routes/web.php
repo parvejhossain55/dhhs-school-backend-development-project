@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NoticeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +41,14 @@ Auth::routes();
 
 Route::middleware('auth')->group(function() {
 
-    // Route::get('/home', [HomeController::class, 'index'])->name('home');
+    // Admin Page View 
     Route::get('/total/admission', [HomeController::class, 'create'])->name('total.admission');
-    Route::get('/add/notice', [HomeController::class, 'addNotice'])->name('add.notice');
     Route::get('/add/photo', [HomeController::class, 'addPhoto'])->name('add.photo');
+    
+    // Notice Publish
+    Route::get('/all/notice', [NoticeController::class, 'index'])->name('all.notice');
+    Route::get('/add/notice', [NoticeController::class, 'create'])->name('add.notice');
+    Route::post('/notice/publish', [NoticeController::class, 'store'])->name('notice.publish');
+    Route::get('/notice/delete/{id}', [NoticeController::class, 'destroy']);
 
 });

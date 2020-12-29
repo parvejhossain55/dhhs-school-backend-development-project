@@ -204,7 +204,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
                 <ul class="nav nav-treeview ml-3">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="{{ route('all.notice') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>All Notice</p>
                         </a>
@@ -494,6 +494,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </script>
     <!-- DataTables  & Plugins -->
     <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    {{-- Sweet Alert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('backend/js/adminlte.min.js') }}"></script>
     <script>
@@ -501,6 +503,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#myTable').DataTable();
         } );
     </script>
+    
+   @if (Session::get('notice_publish'))
+    <script>
+        swal("Greet!", "{{ Session::get('notice_publish') }}", "success");
+    </script>
+    @endif
+   @if (Session::get('notice_delete'))
+    <script>
+        swal("Woff!", "{{ Session::get('notice_delete') }}", "error");
+    </script>
+    @endif
 </body>
 
 </html>
