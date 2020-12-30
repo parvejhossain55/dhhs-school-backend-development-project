@@ -14,7 +14,7 @@
             @csrf
                <div class="card-body">
                   <div class="form-group">
-                     <label for="exampleInputFile">Select Your Notice File</label>
+                     <label for="exampleInputFile">Select Your Gallery Photo</label>
                      <div class="input-group">
                            <div class="custom-file">
                               <input type="file" name="gallery_photo" class="custom-file-input @error('gallery_photo') is-invalid @enderror" id="exampleInputFile">

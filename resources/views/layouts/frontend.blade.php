@@ -203,9 +203,16 @@
     <script src="frontend/assets/vendor/jquery/jquery.min.js"></script>
     <script src="frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="frontend/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    {{-- Sweet Alert --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="frontend/assets/js/app.js"></script>
+    @if (Session::get('application'))
+    <script>
+        swal("Greet!", "{{ Session::get('application') }}", "success");
+    </script>
+    @endif
 
 </body>
 

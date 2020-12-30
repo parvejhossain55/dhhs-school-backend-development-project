@@ -9,7 +9,8 @@
                   <p class="h5">বিদ্যালয়ে ভর্তির ফরম </p>
                </div>
                <div class="px-3 pb-4">
-                  <form class="">
+                  <form action="{{ route('admission.submit') }}" method="POST" enctype="multipart/form-data">
+                     @csrf
                      <!-- Student Information -->
                      <div class="form-block my-4">
                         <fieldset class="custom-border">
@@ -17,25 +18,25 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>ছাত্রের নাম (বাংলা) </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="বাংলায় নাম লিখুন">
+                                 <input type="text" class="form-control" name="sname_bangla" placeholder="বাংলায় নাম লিখুন">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>ছাত্রের নাম (ইংরেজি) </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="ইংরেজিতে নাম লিখুন">
+                                 <input type="text" class="form-control" name="sname_english" placeholder="ইংরেজিতে নাম লিখুন">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-4">
                                  <label>জন্ম তারিখ </label><span class="text-danger ml-2">*</span>
-                                 <input type="date" class="form-control" placeholder="জন্ম তারিখ">
+                                 <input type="text" class="form-control" name="date_of_birth" placeholder='dd-mm-yy'>
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>ধর্ম </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="আপনার ধর্মের নাম">
+                                 <input type="text" class="form-control" name="religion" placeholder="আপনার ধর্মের নাম">
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>জাতীয়তা </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="জাতীয়তা">
+                                 <input type="text" class="form-control" name="nationality" placeholder="জাতীয়তা">
                               </div>
                            </div>
                            <div class="container">
@@ -43,22 +44,19 @@
                                  <p class="mr-3">লিঙ্গঃ</p>
                                  <!-- Default inline 1-->
                                  <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline1"
-                                       name="inlineDefaultRadiosExample">
+                                    <input type="radio" name="gender" class="custom-control-input" value="পুরুষ" id="defaultInline1">
                                     <label class="custom-control-label" for="defaultInline1">পুরুষ</label>
                                  </div>
             
                                  <!-- Default inline 2-->
                                  <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline2"
-                                       name="inlineDefaultRadiosExample">
+                                    <input type="radio" name="gender" class="custom-control-input" value="মহিলা" id="defaultInline2">
                                     <label class="custom-control-label" for="defaultInline2">মহিলা</label> 
                                  </div>
             
                                  <!-- Default inline 3-->
                                  <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="defaultInline3"
-                                       name="inlineDefaultRadiosExample">
+                                    <input type="radio" name="gender" class="custom-control-input" value="অন্যান্য" id="defaultInline3">
                                     <label class="custom-control-label" for="defaultInline3">অন্যান্য</label>
                                  </div>
                                  <!-- <div class="custom-control custom-radio custom-control-inline">
@@ -77,35 +75,35 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>পিতার নাম (বাংলা) </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="বাংলায় নাম লিখুন">
+                                 <input type="text" class="form-control" name="fname_bangla" placeholder="বাংলায় নাম লিখুন">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>পিতার নাম (ইংরেজি) </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="ইংরেজিতে নাম লিখুন">
+                                 <input type="text" class="form-control" name="fname_english" placeholder="ইংরেজিতে নাম লিখুন">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-6">
                                  <label>মাতার নাম (বাংলা) </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="বাংলায় নাম লিখুন">
+                                 <input type="text" class="form-control" name="mname_bangla" placeholder="বাংলায় নাম লিখুন">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>মাতার নাম (ইংরেজি) </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="ইংরেজিতে নাম লিখুন">
+                                 <input type="text" class="form-control" name="mname_english" placeholder="ইংরেজিতে নাম লিখুন">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-4">
                                  <label>পিতার মোবাইল নাম্বার</label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder='মোবাইল নাম্বার'>
+                                 <input type="text" class="form-control" name="father_mobile" placeholder='মোবাইল নাম্বার'>
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>অভিভাবকের বার্ষিক আয় </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder='বার্ষিক আয় '>
+                                 <input type="text" class="form-control" name="father_year_income" placeholder='বার্ষিক আয় '>
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>পিতার অবর্তমানে অভিভাবক </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="অভিভাবকের নাম">
+                                 <input type="text" class="form-control" name="father_absence_gurdian" placeholder="অভিভাবকের নাম">
                               </div>
                            </div>
                         </fieldset>
@@ -119,8 +117,8 @@
                               <div class="col-md-4">
                                  <label for="inputState">যেই শ্রেণিতে ভর্তি হতে ইচ্ছুক </label><span
                                     class="text-danger ml-2">*</span>
-                                 <select id="inputState" class="form-control">
-                                    <option selected>শ্রেণী সিলেক্ট করুন....</option>
+                                 <select id="inputState" class="form-control" name="which_class_admit">
+                                    <option>শ্রেণী সিলেক্ট করুন....</option>
                                     <option>ষষ্ঠ শ্র্রেণী</option>
                                     <option>সপ্তম শ্রেণী</option>
                                     <option>অষ্টম শ্রেণী</option>
@@ -128,18 +126,17 @@
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>ছবি</label><span class="text-danger ml-2">*</span>
-                                 <input type="file" id="inputPassword5" class="form-control"
+                                 <input type="file" class="form-control" name="photo"
                                     aria-describedby="profilePhoto">
                                  <small id="profilePhoto" class="form-text text-muted">
-                                    ছবি ৩০০x৩০০ পিক্সেল এবং ফাইল সাইজ সর্বোচ্চ ৫০০কেবি.
+                                    ছবি ৩০০x৩০০ পিক্সেল এবং ফাইল সাইজ সর্বোচ্চ ৫১২কেবি.
                                  </small>
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>স্বাক্ষর </label><span class="text-danger ml-2">*</span>
-                                 <input type="file" id="inputPassword5" class="form-control"
-                                    aria-describedby="signaturePhoto">
+                                 <input type="file" id="inputPassword5" class="form-control" name="signature" aria-describedby="signaturePhoto">
                                  <small id="signaturePhoto" class="form-text text-muted">
-                                    স্বাক্ষর ৩০০x৮০ পিক্সেল এবং ফাইল সাইজ সর্বোচ্চ ৫০০কেবি.
+                                    স্বাক্ষর ৩০০x৮০ পিক্সেল এবং ফাইল সাইজ সর্বোচ্চ ৫১২কেবি.
                                  </small>
                               </div>
                            </div>
@@ -152,21 +149,21 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>গ্রামঃ </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="গ্রামের নাম">
+                                 <input type="text" class="form-control" name="present_village" placeholder="গ্রামের নাম">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>ডাকঘরঃ </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="ডাকঘর">
+                                 <input type="text" class="form-control" name="present_post_office" placeholder="ডাকঘর">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-6">
                                  <label>থানাঃ </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="থানা ">
+                                 <input type="text" class="form-control" name="present_thana" placeholder="থানা ">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>জেলাঃ </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="জেলা ">
+                                 <input type="text" class="form-control" name="present_zila" placeholder="জেলা ">
                               </div>
                            </div>
                         </fieldset>
@@ -178,21 +175,21 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>গ্রামঃ </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="গ্রামের নাম">
+                                 <input type="text" class="form-control" name="parmanent_village" placeholder="গ্রামের নাম">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>ডাকঘরঃ </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="ডাকঘর">
+                                 <input type="text" class="form-control" name="parmanent_post_office" placeholder="ডাকঘর">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-6">
                                  <label>থানাঃ </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="থানা ">
+                                 <input type="text" class="form-control" name="parmanent_thana" placeholder="থানা ">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>জেলাঃ </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="জেলা ">
+                                 <input type="text" class="form-control" name="parmanent_zila" placeholder="জেলা ">
                               </div>
                            </div>
                         </fieldset>
@@ -204,12 +201,12 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>মোবাইল নাম্বার </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control"
+                                 <input type="text" class="form-control" name="bkash_no"
                                     placeholder="যেই নাম্বার থেকে টাকা পাঠিয়েছেন">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>ট্রান্সাকশন আইডি </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" placeholder="ট্রান্সাকশন আইডি যেটি পেয়েছেন">
+                                 <input type="text" class="form-control" name="tranx_id" placeholder="ট্রান্সাকশন আইডি যেটি পেয়েছেন">
                               </div>
                            </div>
                         </fieldset>

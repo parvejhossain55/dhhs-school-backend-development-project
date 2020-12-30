@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -25,27 +26,26 @@ Route::get('/', function () {
 Route::view('/about', 'frontend.about');
 Route::view('/head-message', 'frontend.head-message');
 Route::view('/admission-details', 'frontend.admission-details');
-Route::view('/admission', 'frontend.admission');
+Route::get('/admission', function () {
+    return view('frontend.admission');
+});
 Route::view('/teacher-info', 'frontend.teacher-info');
 Route::view('/notice-board', 'frontend.notice');
 Route::view('/photo-gallery', 'frontend.photo-gallery');
 Route::view('/contact', 'frontend.contact');
-
-
-
 // Bakcend Route Start
-Route::get('/backends', function(){
-    return view('layouts.backend');
-});
-
+// Route::get('/backends', function(){
+//     return view('layouts.backend');
+// });
 Auth::routes();
-
-
 Route::middleware('auth')->group(function() {
-
     // Admin Page View 
-    Route::get('/total/admission', [HomeController::class, 'create'])->name('total.admission');
-    Route::get('/add/photo', [HomeController::class, 'addPhoto'])->name('add.photo');
+    // Route::get('/add/photo/', [HomeController::class, 'addPhoto'])->name('add.photo');
+    
+    // Admision Related Route
+    Route::get('/total/admission', [AdmissionController::class, 'index'])->name('total.admission');
+    Route::post('admission/submit', [AdmissionController::class, 'store'])->name('admission.submit');
+    
     
     // Notice Publish
     Route::get('/add/notice', [NoticeController::class, 'create'])->name('add.notice');
