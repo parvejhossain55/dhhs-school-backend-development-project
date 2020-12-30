@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticeController;
+use App\Models\Gallery;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,9 +48,16 @@ Route::middleware('auth')->group(function() {
     Route::get('/add/photo', [HomeController::class, 'addPhoto'])->name('add.photo');
     
     // Notice Publish
-    Route::get('/all/notice', [NoticeController::class, 'index'])->name('all.notice');
     Route::get('/add/notice', [NoticeController::class, 'create'])->name('add.notice');
+    Route::get('/all/notice', [NoticeController::class, 'index'])->name('all.notice');
     Route::post('/notice/publish', [NoticeController::class, 'store'])->name('notice.publish');
     Route::get('/notice/delete/{id}', [NoticeController::class, 'destroy']);
 
+    // Photo Gallery 
+    Route::get('/add/photo/', [GalleryController::class, 'create'])->name('add.photo');
+    Route::get('/all/gallery/', [GalleryController::class, 'index'])->name('all.photo');
+    Route::post('/add/gallery/', [GalleryController::class, 'store'])->name('add.gallery');
+    Route::get('/photo-gallery/edit/{id}', [GalleryController::class, 'edit']);
+    Route::post('/update/gallery/{id}', [GalleryController::class, 'update']);
+    Route::get('/photo-gallery/delete/{id}', [GalleryController::class, 'destroy']);
 });

@@ -6,3 +6,8 @@
 	background-color: #f000;
 	color: #fff;
 }
+
+table.dataTable tbody th, table.dataTable tbody td {
+	padding: 8px 10px;
+	vertical-align: middle;
+}

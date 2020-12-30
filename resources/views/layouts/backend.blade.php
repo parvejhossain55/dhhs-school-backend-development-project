@@ -133,7 +133,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="{{ url('/backends') }}" class="brand-link">
                 {{-- <img src="{{ asset('backend/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8"> --}}
                 <i class="nav-icon fas fa-tachometer-alt mx-3 mb-3"></i>
@@ -219,6 +219,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
+                    {{-- <i class=" fas fa-tachometer-alt"></i> --}}
+                    <i class="nav-icon fas fa-images"></i>
+                    <p>
+                        Photo Gallery
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview ml-3">
+                    <li class="nav-item">
+                        <a href="{{ route('all.photo') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>All Photo</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('add.photo') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Add Photo</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
                     <i class="fas fa-poll-h nav-icon"></i>
                     <p>
                         Syllabus
@@ -283,30 +307,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add Routine</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    {{-- <i class=" fas fa-tachometer-alt"></i> --}}
-                    <i class="nav-icon fas fa-images"></i>
-                    <p>
-                        Photo Gallery
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview ml-3">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>All Photo</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ route('add.photo') }}" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Add Photo</p>
                         </a>
                     </li>
                 </ul>
@@ -512,6 +512,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
    @if (Session::get('notice_delete'))
     <script>
         swal("Woff!", "{{ Session::get('notice_delete') }}", "error");
+    </script>
+    @endif
+   @if (Session::get('photo'))
+    <script>
+        swal("Greet!", "{{ Session::get('photo') }}", "success");
     </script>
     @endif
 </body>
