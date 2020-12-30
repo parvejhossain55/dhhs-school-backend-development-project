@@ -27,7 +27,7 @@
                                  <td>{{ $notice->notice_title }}</td>
                                  <td>{{ $notice->created_at->format('d-m-Y') }}</td>
                                  <td>
-                                    <a href="{{ asset($notice->notice_file) }}" class="btn btn-outline-success"> <i class="fas fa-eye"></i> View</a>
+                                    <a href="{{ url('/notice/edit/'.$notice->id) }}" class="btn btn-outline-success"> <i class="fas fa-eye"></i> Edit</a>
                                     <a href="{{ url('/notice/delete/'.$notice->id) }}" class="btn btn-outline-danger"> <i class="fas fa-trash-alt"></i> Delete</a>
                                  </td>
                               </tr>

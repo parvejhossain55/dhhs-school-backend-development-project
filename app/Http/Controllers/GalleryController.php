@@ -40,7 +40,7 @@ class GalleryController extends Controller
             'gallery_photo' => $final_file
         ]);
 
-        return redirect()->route('show.gallery')->with('photo', 'You Are Successfully Add Photo in Photo Gallery');
+        return redirect()->route('all.photo')->with('photo', 'You Are Successfully Add Photo in Photo Gallery');
     }
 
     public function edit($id)

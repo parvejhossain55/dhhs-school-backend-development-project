@@ -509,6 +509,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
         swal("Greet!", "{{ Session::get('notice_publish') }}", "success");
     </script>
     @endif
+   @if (Session::get('notice_update'))
+    <script>
+        swal("Greet!", "{{ Session::get('notice_update') }}", "success");
+    </script>
+    @endif
    @if (Session::get('notice_delete'))
     <script>
         swal("Woff!", "{{ Session::get('notice_delete') }}", "error");

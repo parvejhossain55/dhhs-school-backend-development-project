@@ -51,6 +51,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/add/notice', [NoticeController::class, 'create'])->name('add.notice');
     Route::get('/all/notice', [NoticeController::class, 'index'])->name('all.notice');
     Route::post('/notice/publish', [NoticeController::class, 'store'])->name('notice.publish');
+    Route::get('/notice/edit/{id}', [NoticeController::class, 'edit']);
+    Route::post('/notice/update/{id}', [NoticeController::class, 'update']);
     Route::get('/notice/delete/{id}', [NoticeController::class, 'destroy']);
 
     // Photo Gallery 
