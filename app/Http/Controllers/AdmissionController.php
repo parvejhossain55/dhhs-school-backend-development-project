@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admission;
 use Illuminate\Http\Request;
+use PDF;
 
 class AdmissionController extends Controller
 {
@@ -93,7 +94,8 @@ class AdmissionController extends Controller
         $signature_final = $signature_up_location.$signature_name;
         $signature->move(public_path($signature_up_location), $signature_name);
         
-        Admission::create([
+        $datas = Admission::create([
+            'app_id' => mt_rand(111111, 999999),
             'sname_bangla' => $request->sname_bangla,
             'sname_english' => $request->sname_english,
             'date_of_birth' => $request->date_of_birth,
@@ -122,6 +124,29 @@ class AdmissionController extends Controller
             'tranx_id' => $request->tranx_id,
         ]);
 
-        return redirect()->back()->with('application', 'Your Application Successfully Submitted');
+        
+
+        $pdf = PDF::loadView('frontend.receipt', compact('datas'));   
+        return $pdf->stream();
+
+
+
+        // $options = PDF::getOptions();
+        // $options->setDefaultFont('SolaimanLipi');
+
+        // $pdf = PDF::setOptions(['dpi' => 150, 'defaultFont' => 'SolaimanLipi'])->loadView('frontend.receipt', compact('datas'));
+
+        // $pdf->set('SolaimanLipi');
+        // dd($students->sname_bangla);
+        // die();
     }
+    
+    // return redirect('/receipt');
+
+    // public function renderPdf()
+    // {
+        // $pdf = new Dompdf();
+        // $pdf->loadHtml('hello world');
+        // return $pdf->stream();
+    // }
 }

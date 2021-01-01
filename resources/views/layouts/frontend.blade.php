@@ -51,7 +51,7 @@
                                 <li><a href="{{ url('/head-message') }}">প্রধান শিক্ষকের বানী</a></li>
                             </ul>
                         </li>
-                        <li class="drop-down"><a href="">ভর্তি আবেদন</a>
+                        <li class="drop-down"><a href="">ভর্তির আবেদন</a>
                             <ul>
                                 <li><a href="{{ url('/admission-details') }}">আবেদনের নিয়মাবলী</a></li>
                                 <li><a href="{{ url('/admission') }}">আবেদনের ফরম</a></li>
@@ -118,7 +118,7 @@
             {{-- admission page --}}
             @yield('onlybody')
         </section>
-
+        @yield('contact')
         <!-- ======= Footer ======= -->
         <footer id="footer" class="mt-3">
             <div class="footer-top">
@@ -191,9 +191,9 @@
 
             </div>
         </footer><!-- End Footer -->
+        
 
 
-        @yield('contact')
     </main><!-- End #main -->
 
     <a href="#" class="back-to-top"><i class="icofont-arrow-up"></i></a>

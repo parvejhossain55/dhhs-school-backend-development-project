@@ -14,9 +14,9 @@
                         <tr>
                             <th>Sl</th>
                             <th>Name</th>
-                            <th>Mobile</th>
+                            <th>Father Number</th>
                             <th>Village</th>
-                            <th>Payment Mobile</th>
+                            <th>Payment Number</th>
                             <th>TranxId</th>
                             <th>Action</th>
                         </tr>

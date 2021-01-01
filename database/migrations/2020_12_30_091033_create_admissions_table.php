@@ -15,6 +15,7 @@ class CreateAdmissionsTable extends Migration
     {
         Schema::create('admissions', function (Blueprint $table) {
             $table->id();
+            $table->string('app_id')->unique();
             $table->string('sname_bangla');
             $table->string('sname_english');
             $table->string('date_of_birth');
