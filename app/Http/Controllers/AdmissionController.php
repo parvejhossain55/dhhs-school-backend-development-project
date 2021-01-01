@@ -141,12 +141,9 @@ class AdmissionController extends Controller
         // die();
     }
     
-    // return redirect('/receipt');
-
-    // public function renderPdf()
-    // {
-        // $pdf = new Dompdf();
-        // $pdf->loadHtml('hello world');
-        // return $pdf->stream();
-    // }
+    public function edit($id)
+    {
+        $data = Admission::find($id);
+        return view('backend.edit-admission', compact('data'));
+    }
 }

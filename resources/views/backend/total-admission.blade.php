@@ -13,6 +13,7 @@
                     <thead>
                         <tr>
                             <th>Sl</th>
+                            <th>App Id</th>
                             <th>Name</th>
                             <th>Father Number</th>
                             <th>Village</th>
@@ -27,14 +28,15 @@
                             @foreach($all_admission as $admission)
                             <tr>
                                 <th>{{ $i++ }}</th>
+                                <td>{{ $admission->app_id }}</td>
                                 <td>{{ $admission->sname_bangla }}</td>
                                 <td>{{ $admission->father_mobile }}</td>
                                 <td>{{ $admission->present_village }}</td>
                                 <td>{{ $admission->bkash_no }}</td>
                                 <td>{{ $admission->tranx_id }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-outline-success"> <i class="fas fa-eye"></i> View</a>
-                                    <a href="#" class="btn btn-outline-danger"> <i class="fas fa-trash-alt"></i> Delete</a>
+                                    <a href="{{ url('/admission/edit/'.$admission->id) }}" class="btn btn-outline-success"> <i class="fas fa-eye"></i> View</a>
+                                    <a href="{{ url('/admission/delete/'.$admission->id) }}" class="btn btn-outline-danger"> <i class="fas fa-trash-alt"></i> Delete</a>
                                 </td>
                             </tr>
                             @endforeach

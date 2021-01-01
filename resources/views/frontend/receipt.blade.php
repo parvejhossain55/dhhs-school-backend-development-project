@@ -31,7 +31,7 @@
       {{-- page header --}}
       <div class="row my-3">
         <div class="col">
-          <img src="{{ asset($datas->photo) }}" width="88" height="88" alt="Profile Photo" class="d-block float-left mr-2">
+          <img src="{{ asset($datas->photo) }}" width="88" height="88" alt="Profile Photo" class="d-block float-left">
           <div class="text-center">
             <h2>Damkura Hat High School </h2>
               <div style="font-weight: 600">
@@ -107,7 +107,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <img src="{{ asset($datas->signature) }}" width="300px" height="80px" alt="student signature">
+          <img src="{{ asset($datas->signature) }}" width="280px" height="60px" alt="student signature">
         </div>
       </div>
   </div>

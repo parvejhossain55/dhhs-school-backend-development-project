@@ -11,3 +11,8 @@ table.dataTable tbody th, table.dataTable tbody td {
 	padding: 8px 10px;
 	vertical-align: middle;
 }
+
+.form-button {
+	background-color: #5fcf80;
+	color: #fff;
+}

@@ -1,12 +1,12 @@
-@extends('layouts.frontend')
+@extends('layouts.backend')
 
-@section('onlybody')
+@section('section-one')
    <div class="row">
       <div class="col">
          <div class="admission-section">
             <div class="card mb-3">
                <div class="card-header bg-success-one">
-                  <p class="h5">Admission Form </p>
+                  <p class="h3">Edit Admission Form </p>
                </div>
                <div class="px-3 pb-4">
                   <form action="{{ route('admission.submit') }}" method="POST" enctype="multipart/form-data">
@@ -18,25 +18,25 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>Student Name (bangla)</label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="sname_bangla" placeholder="Enter Your Bangla Name">
+                                 <input type="text" class="form-control" name="sname_bangla" value="{{ $data->sname_bangla }}">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>Student Name (english)</label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="sname_english" placeholder="Enter Your English Name">
+                                 <input type="text" class="form-control" name="sname_english" value="{{ $data->sname_english }}">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-4">
                                  <label>Date of Birth</label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="date_of_birth" placeholder='dd-mm-yy'>
+                                 <input type="text" class="form-control" name="date_of_birth" value='{{ $data->date_of_birth }}'>
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>Religious </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="religion" placeholder="Enter Your Religious">
+                                 <input type="text" class="form-control" name="religion" value="{{ $data->religion }}">
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>Nationality </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="nationality" placeholder="Enter Your Nationality">
+                                 <input type="text" class="form-control" name="nationality" value="{{ $data->nationality }}">
                               </div>
                            </div>
                            <div class="container">
@@ -44,13 +44,13 @@
                                  <p class="mr-3">Gender</p>
                                  <!-- Default inline 1-->
                                  <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" name="gender" class="custom-control-input" value="Male" id="defaultInline1">
+                                    <input type="radio" @if($data->gender == 'Male') selected="selected" @endif name="gender" class="custom-control-input" value="Male" id="defaultInline1">
                                     <label class="custom-control-label" for="defaultInline1">Male</label>
                                  </div>
             
                                  <!-- Default inline 2-->
                                  <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" name="gender" class="custom-control-input" value="Female" id="defaultInline2">
+                                    <input type="radio" name="gender" @if($data->gender == 'Female') selected="selected" @endif class="custom-control-input" value="Female" id="defaultInline2">
                                     <label class="custom-control-label" for="defaultInline2">Female</label> 
                                  </div>
             
@@ -75,35 +75,35 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>Father Name (bangla) </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="fname_bangla" placeholder="Enter Your Father Name">
+                                 <input type="text" class="form-control" name="fname_bangla" value="{{ $data->fname_bangla }}">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>Ftaher Nmae (english) </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="fname_english" placeholder="Enter Your Father English Name">
+                                 <input type="text" class="form-control" name="fname_english" value="{{ $data->fname_english }}">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-6">
                                  <label>Mother Name (bangla)</label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="mname_bangla" placeholder="Enter Your Mother Bangla Name">
+                                 <input type="text" class="form-control" name="mname_bangla" value="{{ $data->mname_bangla }}">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>Mothe Name (english) </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="mname_english" placeholder="Enter Your Mothe English Name">
+                                 <input type="text" class="form-control" name="mname_english" value="{{ $data->mname_english }}">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-4">
                                  <label>Father Mobile Number</label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="father_mobile" placeholder='Enter Your Father Mobile Number'>
+                                 <input type="text" class="form-control" name="father_mobile" value='{{ $data->father_mobile }}'>
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>Parent's Annual Income </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="father_year_income" placeholder="Parent's Annual Income ">
+                                 <input type="text" class="form-control" name="father_year_income" value="{{ $data->father_year_income }}">
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>Guardian Absence of the Father </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="father_absence_gurdian" placeholder="Guardian Absence of the Father ">
+                                 <input type="text" class="form-control" name="father_absence_gurdian" value="{{ $data->father_absence_gurdian }}">
                               </div>
                            </div>
                         </fieldset>
@@ -118,7 +118,6 @@
                                  <label for="inputState">Which Class Admitted to You Want </label><span
                                     class="text-danger ml-2">*</span>
                                  <select id="inputState" class="form-control" name="which_class_admit">
-                                    <option>Select Once....</option>
                                     <option value="6th">6th</option>
                                     <option value="7th">7th</option>
                                     <option value="8th">8th</option>
@@ -149,21 +148,21 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>Village</label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="present_village" placeholder="Your Village Name">
+                                 <input type="text" class="form-control" name="present_village" value="{{ $data->present_village }}">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>Post Office </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="present_post_office" placeholder="Your Post Office">
+                                 <input type="text" class="form-control" name="present_post_office" value="{{ $data->present_post_office }}">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-6">
                                  <label>Thana </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="present_thana" placeholder="Your Thana ">
+                                 <input type="text" class="form-control" name="present_thana" value="{{ $data->present_thana }}">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>Zila </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="present_zila" placeholder="Your Present Zila ">
+                                 <input type="text" class="form-control" name="present_zila" value="{{ $data->present_zila }}">
                               </div>
                            </div>
                         </fieldset>
@@ -175,21 +174,21 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>Village </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="parmanent_village" placeholder="Your Village Name">
+                                 <input type="text" class="form-control" name="parmanent_village" value="{{ $data->parmanent_village }}">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>Post Office </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="parmanent_post_office" placeholder="Your Post Office">
+                                 <input type="text" class="form-control" name="parmanent_post_office" value="{{ $data->parmanent_post_office }}">
                               </div>
                            </div>
                            <div class="form-group row mt-4">
                               <div class="col-md-6">
                                  <label>Thana </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="parmanent_thana" placeholder="Your Thana ">
+                                 <input type="text" class="form-control" name="parmanent_thana" value="{{ $data->parmanent_thana }}">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>Zila </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="parmanent_zila" placeholder="Your Zila ">
+                                 <input type="text" class="form-control" name="parmanent_zila" value="{{ $data->parmanent_zila }}">
                               </div>
                            </div>
                         </fieldset>
@@ -201,18 +200,17 @@
                            <div class="form-group row mt-3">
                               <div class="col-md-6">
                                  <label>bKash Mobile Number </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="bkash_no"
-                                    placeholder="bKash Mobile Number">
+                                 <input type="text" class="form-control" name="bkash_no" value="{{ $data->bkash_no }}">
                               </div>
                               <div class="col-md-6 mt-3 mt-md-0">
                                  <label>Tranxaction Id </label><span class="text-danger ml-2">*</span>
-                                 <input type="text" class="form-control" name="tranx_id" placeholder="Tranxaction Id">
+                                 <input type="text" class="form-control" name="tranx_id" value="{{ $data->tranx_id }}">
                               </div>
                            </div>
                         </fieldset>
                      </div>
                      <div class="text-center mt-4">
-                        <button type="submit" class="btn btn-lg form-button">Submit</button>
+                        <button type="submit" class="btn btn-lg form-button">Update</button>
                      </div>
                   </form>
                </div>

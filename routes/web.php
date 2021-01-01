@@ -59,6 +59,7 @@ Route::get('rand', function(){
         
         // Admision Related Route
         Route::get('/total/admission', [AdmissionController::class, 'index'])->name('total.admission');
+        Route::get('/admission/edit/{id}', [AdmissionController::class, 'edit']);
         
         
         // Notice Publish
