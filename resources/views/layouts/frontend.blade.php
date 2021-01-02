@@ -155,13 +155,12 @@
                         <div class="col-lg-3 col-md-6 footer-links">
                             <h4>মেনু </h4>
                             <ul>
-                                <li><i class="icofont-double-right"></i><a target="_blank" href="#">হোম</a></li>
-                                <li><i class="icofont-double-right"></i><a target="_blank" href="#">ভর্তির আবেদন</a>
+                                <li><i class="icofont-double-right"></i><a href="{{ url('/') }}">হোম</a></li>
+                                <li><i class="icofont-double-right"></i><a href="{{ url('/admission') }}">ভর্তির আবেদন</a>
                                 </li>
-                                <li><i class="icofont-double-right"></i><a target="_blank" href="#">রেজাল্ট</a></li>
-                                <li><i class="icofont-double-right"></i><a target="_blank" href="#">বিদ্যালয়
-                                        সম্পর্কে</a></li>
-                                <li><i class="icofont-double-right"></i><a target="_blank" href="#">নোটিশ বোর্ড</a></li>
+                                <li><i class="icofont-double-right"></i><a href="#">রেজাল্ট</a></li>
+                                <li><i class="icofont-double-right"></i><a href="{{ url('/about') }}">বিদ্যালয় সম্পর্কে</a></li>
+                                <li><i class="icofont-double-right"></i><a href="{{ url('/notice-board') }}">নোটিশ বোর্ড</a></li>
                             </ul>
                         </div>
 
@@ -171,10 +170,10 @@
                             </div>
                             <!-- <h4>Follow Us</h4> -->
                             <div class="social-links pt-4">
-                                <a target="_blank" href="#" class="facebook"><i class="icofont-facebook"></i></a>
-                                <a target="_blank" href="#" class="twitter"><i class="icofont-twitter"></i></a>
-                                <a target="_blank" href="#" class="instagram"><i class="icofont-instagram"></i></a>
-                                <a target="_blank" href="#" class="linkedin"><i class="icofont-youtube-play"></i></a>
+                                <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                                <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                                <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+                                <a href="#" class="linkedin"><i class="icofont-youtube-play"></i></a>
                             </div>
                         </div>
                     </div>
@@ -184,8 +183,7 @@
             <div class="d-block py-4 align-items-center" id="footer-text">
                 <div class="text-center">
                     <div class="copyright" style="font-size: 15px;">
-                        &copy; Copyright 2020 - All Rights Reserved | <span>Developed by : <a class="text-danger"
-                                href="#">Parvej Hossain</a></span>
+                        &copy; Copyright 2020 - All Rights Reserved | <span>Developed by : <a class="text-danger" target="_blank" href="https://www.facebook.com/parvej.hossain.155">Parvej Hossain</a></span>
                     </div>
                 </div>
 

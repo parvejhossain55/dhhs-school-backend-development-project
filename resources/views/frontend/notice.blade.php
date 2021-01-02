@@ -1,6 +1,6 @@
 @extends('layouts.frontend')
 
-@section('announcement-section')
+{{-- @section('announcement-section')
 <div id="annaounce" class="container">
    <div class="row">
      <div class="">
@@ -22,10 +22,10 @@
      </div>
    </div>
  </div>
-@endsection
+@endsection --}}
 
 @section('onlybody')
-   <div class="row">
+   <div class="row mt-3 mt-lg-0">
       <div class="col">
          <div class="teacher-list">
             <div class="table-responsive">
@@ -39,13 +39,16 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>২য় হতে দ্বাদশ শ্রেণি পর্যন্ত বেতন পরিশোধ সংক্রান্ত জরুরী বিজ্ঞপ্তি।</td>
-                      <td>13/12/2020</td>
-                      <td><a href="#" class="btn btn-outline-successs"><i class="icofont-download"></i> ডাউনলোড </a></td>
-                    </tr>
-                    <tr>
+                    @php($i=1)
+                    @foreach ($data as $item)    
+                      <tr>
+                        <td>{{ $i++ }}</td>
+                        <td>{{ $item->notice_title }}</td>
+                        <td>{{ $item->created_at->format('d-m-Y') }}</td>
+                        <td><a href="{{ asset($item->notice_file) }}" class="btn btn-outline-successs"><i class="icofont-download"></i> ডাউনলোড </a></td>
+                      </tr>
+                    @endforeach
+                   {{-- <tr>
                       <td>2</td>
                       <td>শহিদ বুদ্ধিজীবী দিবস পালন সম্পর্কিত বিজ্ঞপ্তি।</td>
                       <td>13/12/2020</td>
@@ -62,7 +65,7 @@
                       <td>তৃতীয় সপ্তাহের এ্যাসাইনমেন্ট জমাদান সম্পর্কিত বিজ্ঞপ্তি ।</td>
                       <td>13/12/2020</td>
                       <td><a href="#" class="btn btn-outline-successs"><i class="icofont-download"></i> ডাউনলোড </a></td>
-                    </tr>
+                    </tr> --}}
                   </tbody>
                 </table>
             </div>

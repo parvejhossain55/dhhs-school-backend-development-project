@@ -98,34 +98,29 @@
                     </div>
 
                     <div class="col-lg-8 mt-5 mt-lg-0">
-                        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <form action="https://formspree.io/muhammadparvej98@gmail.com" method="POST" role="form" class="php-email-form">
                             <div class="form-row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" name="name" class="form-control" id="name"
-                                        placeholder="ফুল নাম *" />
+                                    <input type="text" name="name" class="form-control" id="name" placeholder="ফুল নাম *" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="ইমেইল অ্যাড্রেস *" />
+                                    <input type="email" class="form-control" name="_replyto" id="email" placeholder="ইমেইল অ্যাড্রেস *" />
                                     <div class="validate"></div>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" name="subject" id="subject"
-                                        placeholder="সাবজেক্ট *" />
+                                    <input type="text" class="form-control" name="subject" id="subject" placeholder="সাবজেক্ট *" />
                                     <div class="validate"></div>
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <input type="text" class="form-control" name="mobile" id="mobile"
-                                        placeholder="মোবাইল *" />
+                                    <input type="text" class="form-control" name="mobile" id="mobile" placeholder="মোবাইল *" />
                                     <div class="validate"></div>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" data-rule="required"
-                                    data-msg="Please write something for us" placeholder="বিস্তারিত *"></textarea>
+                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="বিস্তারিত *"></textarea>
                                 <div class="validate"></div>
                             </div>
                             <div class="mb-3">

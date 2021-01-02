@@ -8,16 +8,9 @@
      </div>
      <div class="col pt-2">
        <marquee scrollamount='2' direction="Left" onmouseover="this.stop()" onmouseout="this.start()">
-         <span class="mr-3"><a href="#"><i class="icofont-hand-right"></i> রাজশাহী মহানগরীর সরকারি মাধ্যমিক
-             বিদ্যালয়সমূহে ২০২১ শিক্ষাবর্ষে ভর্তির </a></span>
-         <span class="mr-3"><a href="#"><i class="icofont-hand-right"></i> ২০২১ শিক্ষাবর্ষে সরকারি মাধ্যমিক বিদ্যালয়ে
-             শিক্ষার্থী ভর্তি বিজ্ঞপ্তি ।</a></span>
-         <span class="mr-3"><a href="#"><i class="icofont-hand-right"></i> রাজশাহী সরকারি স্কুল এন্ড কলেজে
-             ২০২০-২০২১ শিক্ষাবর্ষে একাদশ শ্রেণিতে ভর্তিকৃত ছাত্রদের অনলাইন ক্লাস রুটিন। </a></span>
-         <span class="mr-3"><a href="#"><i class="icofont-hand-right"></i> রাজশাহী সরকারি স্কুল এন্ড কলেজে একাদশ
-             শ্রেণিতে নতুন ভর্তিকৃত ছাত্রদের জন্য নোটিশ। </a></span>
-         <span class="mr-3"><a href="#"><i class="icofont-hand-right"></i>রাজশাহী সরকারি স্কুল এন্ড কলেজের একাদশ
-             শ্রেণির ছাত্রদের উপবৃত্তি সংক্রান্ত নোটিশ।</a></span>
+         @foreach ($data as $item)
+         <span class="mr-3"><a href="{{ asset($item->notice_file) }}"><i class="icofont-hand-right"></i> {{ $item->notice_title }}</a></span>             
+         @endforeach
        </marquee>
      </div>
    </div>
@@ -74,12 +67,9 @@
         <h5 class="text-light text-center">নোটিশ বোর্ড </h5>
       </div>
       <div class="card-body pb-4" id="notice-board">
-        <p class="card-text"><a href="">রাজশাহী মহানগরীর সরকারি মাধ্যমিক বিদ্যালয়সমূহে ২০২১ শিক্ষাবর্ষে ভর্তির <i class="icofont-arrow-right"></i></a></p><hr>
-        <p class="card-text"><a href="">২০২১ শিক্ষাবর্ষে সরকারি মাধ্যমিক বিদ্যালয়ে শিক্ষার্থী ভর্তি বিজ্ঞপ্তি । <i class="icofont-arrow-right"></i></a></p><hr>
-        <p class="card-text"><a href="">রাজশাহী সরকারি স্কুল এন্ড কলেজে ২০২০-২০২১ শিক্ষাবর্ষে একাদশ শ্রেণিতে ভর্তিকৃত ছাত্রদের অনলাইন ক্লাস রুটিন। <i class="icofont-arrow-right"></i></a></p><hr>
-        <p class="card-text"><a href="">রাজশাহী সরকারি স্কুল এন্ড কলেজে একাদশ শ্রেণিতে নতুন ভর্তিকৃত ছাত্রদের জন্য নোটিশ।<i class="icofont-arrow-right"></i></a></p><hr>
-        <p class="card-text"><a href="">রাজশাহী সরকারি স্কুল এন্ড কলেজের একাদশ শ্রেণির ছাত্রদের উপবৃত্তি সংক্রান্ত নোটিশ।<i class="icofont-arrow-right"></i></a></p><hr>
-        <p class="card-text"><a href="">রাজশাহী সরকারি স্কুল এন্ড কলেজে একাদশ শ্রেণিতে নতুন ভর্তিকৃত ছাত্রদের জন্য নোটিশ।<i class="icofont-arrow-right"></i></a></p><hr>
+        @foreach ($data as $item)
+        <p class="card-text"><a href="{{ asset($item->notice_file) }}">{{ $item->notice_title }} <i class="icofont-arrow-right"></i></a></p><hr>
+        @endforeach
       </div>
     </div>
 @endsection
