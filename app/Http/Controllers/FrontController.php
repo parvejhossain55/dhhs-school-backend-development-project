@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admission;
 use App\Models\Gallery;
 use App\Models\Notice;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class FrontController extends Controller
 {
@@ -40,9 +42,19 @@ class FrontController extends Controller
 
     public function photoGallery()
     {
-        $data = Gallery::latest()->paginate(3);
+        $data = Gallery::latest()->paginate(6);
         return view('frontend.photo-gallery', compact('data'));
     }
+
+    // public function getReceive()
+    // {
+    //     $datas = Admission::latest()->first();
+    //     $pdf = PDF::loadView('frontend.receipt', compact('datas'));
+    //     return $pdf->stream('applicant.pdf');
+
+        // $pdf = new PDF();
+        // return $pdf->download('applicant.pdf');
+    // }
     
 }
 

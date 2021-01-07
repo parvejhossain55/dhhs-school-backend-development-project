@@ -26,20 +26,21 @@
         } */
     </style>
   </head>
-  <body style="border: 1px solid black; padding: 15px 10px;">
+  <body style="border: 1px solid black; padding: 15px 10px;padding-top: 15px;">
     <div class="container-fluid">
       {{-- page header --}}
       <div class="row my-3">
         <div class="col">
-          <img src="{{ asset($datas->photo) }}" width="88" height="88" alt="Profile Photo" class="d-block float-left">
-          <div class="text-center">
+          
+          <img src="{{ asset($datas->photo) }}" width="88" height="88" alt="Profile Photo" class="float-left mr-5">
+          <p class="float-left text-center">
             <h2>Damkura Hat High School </h2>
               <div style="font-weight: 600">
                 <span>Post Office : Damkura Hat</span>
                 <span>, Thana : Damkura</span>
                 <span>, Zila : Rajshahi</span>
               </div>
-          </div>
+            </p>
         </div>
       </div>
       {{-- end page header --}}
@@ -82,12 +83,12 @@
         </div>
       </div>
       {{-- payment info --}}
-      <div class="row">
+      <div class="row mt-4">
         <div class="col">
           <h5>Payment Information</h5>
         </div>
       </div>
-      <div class="row mt-5">
+      <div class="row mb-5">
         <div class="col">
           <table>
             <tbody>

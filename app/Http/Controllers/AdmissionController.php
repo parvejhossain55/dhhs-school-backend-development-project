@@ -124,26 +124,96 @@ class AdmissionController extends Controller
             'tranx_id' => $request->tranx_id,
         ]);
 
-        
-
-        $pdf = PDF::loadView('frontend.receipt', compact('datas'));   
-        return $pdf->stream();
-
-
-
-        // $options = PDF::getOptions();
-        // $options->setDefaultFont('SolaimanLipi');
-
-        // $pdf = PDF::setOptions(['dpi' => 150, 'defaultFont' => 'SolaimanLipi'])->loadView('frontend.receipt', compact('datas'));
-
-        // $pdf->set('SolaimanLipi');
-        // dd($students->sname_bangla);
-        // die();
+        // return redirect('/receipt');
+        // return view('frontend.receipt', compact('datas'));
+        $pdf = PDF::loadView('frontend.receipt', compact('datas'));
+        return $pdf->stream('applicant.pdf');
     }
     
     public function edit($id)
     {
         $data = Admission::find($id);
         return view('backend.edit-admission', compact('data'));
+    }
+
+    public function update(Request $request)
+    {
+        $request->validate([
+            'sname_bangla' => 'required',
+            'sname_english' => 'required',
+            'date_of_birth' => 'required',
+            'religion' => 'required',
+            'nationality' => 'required',
+            'gender' => 'required',
+            // father info
+            'fname_bangla' => 'required',
+            'fname_english' => 'required',
+            'father_mobile' => 'required',
+            'father_year_income' => 'required',
+            'father_absence_gurdian' => 'required',
+            // mother info
+            'mname_bangla' => 'required',
+            'mname_english' => 'required',
+            // other info
+            'which_class_admit' => 'required',
+            // present address
+            'present_village' => 'required',
+            'present_post_office' => 'required',
+            'present_thana' => 'required',
+            'present_zila' => 'required',
+            // parmanent address
+            'parmanent_village' => 'required',
+            'parmanent_post_office' => 'required',
+            'parmanent_thana' => 'required',
+            'parmanent_zila' => 'required',
+            // payment info
+            'bkash_no' => 'required',
+            'tranx_id' => 'required',
+        ]);
+        
+        $datas = Admission::find($request->id)->update([
+            'sname_bangla' => $request->sname_bangla,
+            'sname_english' => $request->sname_english,
+            'date_of_birth' => $request->date_of_birth,
+            'religion' => $request->religion,
+            'nationality' => $request->nationality,
+            'gender' => $request->gender,
+            'fname_bangla' => $request->fname_bangla,
+            'fname_english' => $request->fname_english,
+            'father_mobile' => $request->father_mobile,
+            'father_year_income' => $request->father_year_income,
+            'father_absence_gurdian' => $request->father_absence_gurdian,
+            'mname_bangla' => $request->mname_bangla,
+            'mname_english' => $request->mname_english,
+            'which_class_admit' => $request->which_class_admit,
+            'present_village' => $request->present_village,
+            'present_post_office' => $request->present_post_office,
+            'present_thana' => $request->present_thana,
+            'present_zila' => $request->present_zila,
+            'parmanent_village' => $request->parmanent_village,
+            'parmanent_post_office' => $request->parmanent_post_office,
+            'parmanent_thana' => $request->parmanent_thana,
+            'parmanent_zila' => $request->parmanent_zila,
+            'bkash_no' => $request->bkash_no,
+            'tranx_id' => $request->tranx_id,
+        ]);
+
+        return redirect()->route('total.admission')->with('adm_update', 'Admission Information Updated');
+    }
+
+    public function delete($id)
+    {
+        $data = Admission::find($id);
+        unlink($data->photo);
+        unlink($data->signature);
+        Admission::find($id)->delete();
+        return redirect()->back()->with('admison_delete', 'Application Successfully Deleted');
+    }
+
+    public function todayAdmission()
+    {
+        $date = date('Y-m-d');
+        $data = Admission::whereDate('created_at', $date)->get();
+        return view('backend.today-admission', compact('data'));
     }
 }

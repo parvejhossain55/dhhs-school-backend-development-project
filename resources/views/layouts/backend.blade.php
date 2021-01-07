@@ -38,7 +38,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a href="index3.html" class="nav-link">Home</a>
                 </li>
             </ul>
-
             <!-- SEARCH FORM -->
             <form class="form-inline ml-3">
                 <div class="input-group input-group-sm">
@@ -51,7 +50,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                 </div>
             </form>
-
+            
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Messages Dropdown Menu -->
@@ -59,62 +58,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-comments"></i>
                         <span class="badge badge-danger navbar-badge">3</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{ asset('backend/img/user1-128x128.jpg') }}"
-                                    alt="User Avatar" class="img-size-50 mr-3 img-circle">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Brad Diesel
-                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">Call me whenever you can...</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{ asset('backend/img/user8-128x128.jpg') }}"
-                                    alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        John Pierce
-                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">I got your message bro</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{ asset('backend/img/user3-128x128.jpg') }}"
-                                    alt="User Avatar" class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i
-                                                class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">The subject goes here</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                    </div>
+                    </a>                    
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
@@ -142,29 +86,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Sidebar -->
             <div class="sidebar">
-                <!-- Sidebar user panel (optional) -->
-                {{-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{ asset('backend/img/user2-160x160.jpg') }}" class="img-circle
-                elevation-2" alt="User Image">
-            </div>
-            <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
-            </div>
-    </div> --}}
-
-    <!-- SidebarSearch Form -->
-    {{-- <div class="form-inline">
-                    <div class="input-group" data-widget="sidebar-search">
-                        <input class="form-control form-control-sidebar" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <div class="input-group-append">
-                            <button class="btn btn-sidebar">
-                                <i class="fas fa-search fa-fw"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div> --}}
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -187,7 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('today.admission') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Today Admission</p>
                         </a>
@@ -382,8 +303,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </div><!-- /.container-fluid -->
             </div> --}}
         <!-- /.content-header -->
-
-        <!-- Main content -->
+    
+       <!-- Main content -->
         <div class="content mt-3">
             <div class="container-fluid">
                 <!-- Info boxes -->
@@ -395,8 +316,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="info-box-content">
                                 <span class="info-box-text">Total Admission</span>
                                 <span class="info-box-number">
-                                    10
-                                    {{-- <small>%</small> --}}
+                                    @php
+                                        $admission = \App\Models\Admission::all();
+                                        $date = date('Y-m-d');
+                                        $today_admission = \App\Models\Admission::whereDate('created_at', $date)->get();
+                                    @endphp
+                                    {{ $admission->count() }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -428,7 +353,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Today Admission</span>
-                                <span class="info-box-number">7</span>
+                                <span class="info-box-number">
+                                    {{ $today_admission->count() }}
+                                </span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -441,7 +368,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="info-box-content">
                                 <span class="info-box-text">New Members</span>
-                                <span class="info-box-number">2,000</span>
+                                <span class="info-box-number">100</span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -522,6 +449,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
    @if (Session::get('photo'))
     <script>
         swal("Greet!", "{{ Session::get('photo') }}", "success");
+    </script>
+    @endif
+   @if (Session::get('adm_update'))
+    <script>
+        swal("Greet!", "{{ Session::get('adm_update') }}", "success");
+    </script>
+    @endif
+   @if (Session::get('admison_delete'))
+    <script>
+        swal("Greet!", "{{ Session::get('admison_delete') }}", "success");
     </script>
     @endif
 </body>

@@ -6,12 +6,14 @@
          <div class="admission-section">
             <div class="card mb-3">
                <div class="card-header bg-success-one">
-                  <p class="h3">Edit Admission Form </p>
+                  <p class="h3">Update Admission Form </p>
                </div>
                <div class="px-3 pb-4">
-                  <form action="{{ route('admission.submit') }}" method="POST" enctype="multipart/form-data">
+                  <form action="{{ route('admission.update') }}" method="POST" enctype="multipart/form-data">
                      @csrf
                      <!-- Student Information -->
+                     {{-- <input type="hidden" name="student_signature" value="{{ $data->signature }}"> --}}
+                     <input type="hidden" name="id" value="{{ $data->id }}">
                      <div class="form-block my-4">
                         <fieldset class="custom-border">
                            <legend class="custom-border">Student Information </legend>
@@ -44,13 +46,13 @@
                                  <p class="mr-3">Gender</p>
                                  <!-- Default inline 1-->
                                  <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" @if($data->gender == 'Male') selected="selected" @endif name="gender" class="custom-control-input" value="Male" id="defaultInline1">
+                                    <input type="radio" {{ $data->gender == 'Male' ? 'checked' : '' }} name="gender" class="custom-control-input" value="Male" id="defaultInline1">
                                     <label class="custom-control-label" for="defaultInline1">Male</label>
                                  </div>
             
                                  <!-- Default inline 2-->
                                  <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" name="gender" @if($data->gender == 'Female') selected="selected" @endif class="custom-control-input" value="Female" id="defaultInline2">
+                                    <input type="radio" name="gender" {{ $data->gender == 'Female' ? 'checked' : '' }} class="custom-control-input" value="Female" id="defaultInline2">
                                     <label class="custom-control-label" for="defaultInline2">Female</label> 
                                  </div>
             
@@ -59,10 +61,6 @@
                                     <input type="radio" name="gender" class="custom-control-input" value="Others" id="defaultInline3">
                                     <label class="custom-control-label" for="defaultInline3">Others</label>
                                  </div>
-                                 <!-- <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
-                                  </div> -->
                               </div>
                            </div>
                         </fieldset>
@@ -118,25 +116,22 @@
                                  <label for="inputState">Which Class Admitted to You Want </label><span
                                     class="text-danger ml-2">*</span>
                                  <select id="inputState" class="form-control" name="which_class_admit">
-                                    <option value="6th">6th</option>
-                                    <option value="7th">7th</option>
-                                    <option value="8th">8th</option>
+                                    <option {{ $data->which_class_admit == '6th' ? 'selected' : '' }} value="6th">6th</option>
+                                    <option {{ $data->which_class_admit == '7th' ? 'selected' : '' }} value="7th">7th</option>
+                                    <option {{ $data->which_class_admit == '8th' ? 'selected' : ''}} value="8th">8th</option>
                                  </select>
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>Photo</label><span class="text-danger ml-2">*</span>
-                                 <input type="file" class="form-control" name="photo"
-                                    aria-describedby="profilePhoto">
-                                 <small id="profilePhoto" class="form-text text-muted">
-                                    Image size 300x300 pixels and file size smaller than 512 KB
-                                 </small>
+                                 <div>
+                                    <img src="{{ asset($data->photo) }}" width="150" height="140" alt="">
+                                 </div>
                               </div>
                               <div class="col-md-4 mt-3 mt-md-0">
                                  <label>Signature </label><span class="text-danger ml-2">*</span>
-                                 <input type="file" id="inputPassword5" class="form-control" name="signature" aria-describedby="signaturePhoto">
-                                 <small id="signaturePhoto" class="form-text text-muted">
-                                    Image size 300x80 pixels and file size smaller than 512 KB
-                                 </small>
+                                 <div>
+                                    <img src="{{ asset($data->signature) }}" width="300" height="80" alt="">
+                                 </div>
                               </div>
                            </div>
                         </fieldset>

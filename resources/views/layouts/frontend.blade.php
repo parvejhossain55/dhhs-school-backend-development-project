@@ -175,7 +175,11 @@
                                 <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
                                 <a href="#" class="linkedin"><i class="icofont-youtube-play"></i></a>
                             </div>
-                        </div>
+                            <div class="ml-3 mt-4">
+                                <script type="text/javascript" src="http://services.webestools.com/cpt_visitors/68422-10-6.js"></script>
+                                </div>
+                                <a href="http://www.webestools.com/" style="display:block;text-align:center;" title="Tools services webmasters counters generators scripts tutorials free"></a>
+                            </div>
                     </div>
                 </div>
             </div>

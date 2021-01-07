@@ -53,7 +53,7 @@
                   </div> --}}
                </div>
             </div>
-            {{ $data->links() }}
+            {{-- {{ $data->links() }} --}}
           </div>
       </div>
    </div>

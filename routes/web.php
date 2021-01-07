@@ -5,9 +5,9 @@ use App\Http\Controllers\FrontController;
 use App\Http\Controllers\GalleryController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\HomeController;
+// use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticeController;
-use App\Models\Gallery;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -32,45 +32,38 @@ Route::get('/notice-board', [FrontController::class, 'noticeBoard']);
 Route::get('/photo-gallery', [FrontController::class, 'photoGallery']);
 Route::view('/contact', 'frontend.contact');
 
-
-Route::get('/receipt', [FrontController::class, 'getReceive']);
-// Route::get('/test', function () {
-//     return view('frontend.receive');
-// });
-
-
 // Bakcend Route Start
 
-    Auth::routes();
+Auth::routes();
+
+Route::middleware('auth')->group(function() {
     
-    Route::middleware('auth')->group(function() {
-        // Admin Page View 
-        // Route::get('/add/photo/', [HomeController::class, 'addPhoto'])->name('add.photo');
-        
-        Route::get('/backends', function(){
-            return view('layouts.backend');
-        });
-        
-        // Admision Related Route
-        Route::get('/total/admission', [AdmissionController::class, 'index'])->name('total.admission');
-        Route::get('/admission/edit/{id}', [AdmissionController::class, 'edit']);
-        
-        
-        // Notice Publish
-        Route::get('/add/notice', [NoticeController::class, 'create'])->name('add.notice');
-        Route::get('/all/notice', [NoticeController::class, 'index'])->name('all.notice');
-        Route::post('/notice/publish', [NoticeController::class, 'store'])->name('notice.publish');
-        Route::get('/notice/edit/{id}', [NoticeController::class, 'edit']);
-        Route::post('/notice/update/{id}', [NoticeController::class, 'update']);
-        Route::get('/notice/delete/{id}', [NoticeController::class, 'destroy']);
-        
-        // Photo Gallery 
-        Route::get('/add/photo/', [GalleryController::class, 'create'])->name('add.photo');
-        Route::get('/all/gallery/', [GalleryController::class, 'index'])->name('all.photo');
-        Route::post('/add/gallery/', [GalleryController::class, 'store'])->name('add.gallery');
-        Route::get('/photo-gallery/edit/{id}', [GalleryController::class, 'edit']);
-        Route::post('/update/gallery/{id}', [GalleryController::class, 'update']);
-        Route::get('/photo-gallery/delete/{id}', [GalleryController::class, 'destroy']);
-        
+    Route::get('/backends', function(){
+        return view('layouts.backend');
     });
+
+    // Admision Related Route
+    Route::get('/total/admission', [AdmissionController::class, 'index'])->name('total.admission');
+    Route::get('/admission/edit/{id}', [AdmissionController::class, 'edit']);
+    Route::post('/admission/update/', [AdmissionController::class, 'update'])->name('admission.update');
+    Route::get('/admission/delete/{id}', [AdmissionController::class, 'delete']);
+    Route::get('/today/admission/', [AdmissionController::class, 'todayAdmission'])->name('today.admission');
+    
+    // Notice Publish
+    Route::get('/add/notice', [NoticeController::class, 'create'])->name('add.notice');
+    Route::get('/all/notice', [NoticeController::class, 'index'])->name('all.notice');
+    Route::post('/notice/publish', [NoticeController::class, 'store'])->name('notice.publish');
+    Route::get('/notice/edit/{id}', [NoticeController::class, 'edit']);
+    Route::post('/notice/update/{id}', [NoticeController::class, 'update']);
+    Route::get('/notice/delete/{id}', [NoticeController::class, 'destroy']);
+
+    // Photo Gallery 
+    Route::get('/add/photo/', [GalleryController::class, 'create'])->name('add.photo');
+    Route::get('/all/gallery/', [GalleryController::class, 'index'])->name('all.photo');
+    Route::post('/add/gallery/', [GalleryController::class, 'store'])->name('add.gallery');
+    Route::get('/photo-gallery/edit/{id}', [GalleryController::class, 'edit']);
+    Route::post('/update/gallery/{id}', [GalleryController::class, 'update']);
+    Route::get('/photo-gallery/delete/{id}', [GalleryController::class, 'destroy']);
+    
+});
     

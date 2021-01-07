@@ -11,29 +11,29 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
-    }
+    // public function index()
+    // {
+    //     return view('home');
+    // }
 
-    public function create()
-    {
-        return view('backend.total-admission');
-    }
+    // public function create()
+    // {
+    //     return view('backend.total-admission');
+    // }
 
     // Add photo page view
-    public function addPhoto()
-    {
-        return view('backend.add-photo');
-    }
+    // public function addPhoto()
+    // {
+    //     return view('backend.add-photo');
+    // }
 }
