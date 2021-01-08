@@ -14,14 +14,12 @@
   <link href="frontend/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
 
     <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    {{-- DataTables --}}
+    <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Vendor CSS Files -->
     <link href="frontend/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="frontend/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <!-- <link href="frontend/assets/vendor/aos/aos.css" rel="stylesheet"> -->
 
     <!-- Template Main CSS File -->
     <link href="frontend/assets/css/style.css" rel="stylesheet">
@@ -51,12 +49,21 @@
                                 <li><a href="{{ url('/head-message') }}">প্রধান শিক্ষকের বানী</a></li>
                             </ul>
                         </li>
-                        <li class="drop-down"><a href="">ভর্তির আবেদন</a>
+                        <li class="drop-down"><a href="">ছাত্র/ছাত্রির তথ্য</a>
+                            <ul>
+                                <li><a href="{{ url('/class-six') }}">ষষ্ঠ শ্রেণী</a></li>
+                                <li><a href="{{ url('/class-six') }}">সপ্তম শ্রেণী</a></li>
+                                <li><a href="{{ url('/admission') }}">অষ্টম শ্রেণী</a></li>
+                                <li><a href="{{ url('/admission') }}">নবম শ্রেণী</a></li>
+                                <li><a href="{{ url('/admission') }}">দশম শ্রেণী</a></li>
+                            </ul>
+                        </li>
+                        {{-- <li class="drop-down"><a href="">ভর্তির আবেদন</a>
                             <ul>
                                 <li><a href="{{ url('/admission-details') }}">আবেদনের নিয়মাবলী</a></li>
                                 <li><a href="{{ url('/admission') }}">আবেদনের ফরম</a></li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li class="drop-down"><a href="">একাডেমিক </a>
                             <ul>
                                 <li><a href="#">সিলেবাস </a></li>
@@ -67,7 +74,7 @@
                         <li><a href="{{ url('/teacher-info') }}">শিক্ষক ও কর্মচারী</a></li>
                         <li><a href="{{ url('/notice-board') }}">নোটিশ </a></li>
                         <li><a href="{{ url('/photo-gallery') }}">ফটো গ্যালারি </a></li>
-                        <li><a href="{{ url('/contact') }}">যোগাযোগ </a></li>
+                        {{-- <li><a href="{{ url('/contact') }}">যোগাযোগ </a></li> --}}
                     </ul>
                 </nav>
             </div>
@@ -207,6 +214,8 @@
     <script src="frontend/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
     {{-- Sweet Alert --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    {{-- DataTables --}}
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="frontend/assets/js/app.js"></script>
@@ -215,7 +224,11 @@
         swal("Greet!", "{{ Session::get('application') }}", "success");
     </script>
     @endif
-
+    <script>
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
 </body>
 
 </html>

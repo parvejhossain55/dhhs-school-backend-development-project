@@ -46,15 +46,11 @@ class FrontController extends Controller
         return view('frontend.photo-gallery', compact('data'));
     }
 
-    // public function getReceive()
-    // {
-    //     $datas = Admission::latest()->first();
-    //     $pdf = PDF::loadView('frontend.receipt', compact('datas'));
-    //     return $pdf->stream('applicant.pdf');
-
-        // $pdf = new PDF();
-        // return $pdf->download('applicant.pdf');
-    // }
+    // Class Six Student Data
+    public function getClassSix()
+    {
+        return view('frontend/six');
+    }
     
 }
 

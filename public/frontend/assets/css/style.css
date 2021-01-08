@@ -2,6 +2,11 @@
 /*--------------------------------------------------------------
 # Custom Css
 --------------------------------------------------------------*/
+/* about pager list style */
+.about-list li{
+  margin: 10px 0;
+}
+
 /* Global font size */
 .font-global{
   font-size: 17px;

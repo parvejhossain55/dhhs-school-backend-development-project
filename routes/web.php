@@ -31,6 +31,8 @@ Route::view('/teacher-info', 'frontend.teacher-info');
 Route::get('/notice-board', [FrontController::class, 'noticeBoard']);
 Route::get('/photo-gallery', [FrontController::class, 'photoGallery']);
 Route::view('/contact', 'frontend.contact');
+// class wise student view
+Route::get('/class-six', [FrontController::class, 'getClassSix']);
 
 // Bakcend Route Start
 
