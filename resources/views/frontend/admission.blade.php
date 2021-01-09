@@ -59,10 +59,6 @@
                                     <input type="radio" name="gender" class="custom-control-input" value="Others" id="defaultInline3">
                                     <label class="custom-control-label" for="defaultInline3">Others</label>
                                  </div>
-                                 <!-- <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                                    <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
-                                  </div> -->
                               </div>
                            </div>
                         </fieldset>

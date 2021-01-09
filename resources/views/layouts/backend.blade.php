@@ -96,6 +96,70 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="javascript:void(0)" class="nav-link">
                     <i class="nav-icon fas fa-address-card"></i>
                     <p>
+                        Student Info
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview ml-3">
+                    <li class="nav-item">
+                        <a href="{{ route('add.student') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Add Student</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('total.student') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Total Student</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0)" class="nav-link">
+                    <i class="nav-icon fas fa-list"></i>
+                    <p>
+                        Student List
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview ml-3">
+                    <li class="nav-item">
+                        <a href="{{ route('class.six') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Class Six</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('class.seven') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Class Seven</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('class.eight') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Class Eight</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('class.nine') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Class Nine</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('class.ten') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Class Ten</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            {{-- <li class="nav-item menu-open">
+                <a href="javascript:void(0)" class="nav-link">
+                    <i class="nav-icon fas fa-address-card"></i>
+                    <p>
                         Admission Info
                         <i class="right fas fa-angle-left"></i>
                     </p>
@@ -114,7 +178,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-bell"></i>
@@ -314,14 +378,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <span class="info-box-icon bg-info elevation-1"><i class="fas fa-border-all"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Total Admission</span>
+                                <span class="info-box-text">Total Student</span>
                                 <span class="info-box-number">
                                     @php
-                                        $admission = \App\Models\Admission::all();
-                                        $date = date('Y-m-d');
-                                        $today_admission = \App\Models\Admission::whereDate('created_at', $date)->get();
+                                        $student = \App\Models\Student::all();
                                     @endphp
-                                    {{ $admission->count() }}
+                                    {{ $student->count() }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -334,8 +396,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-clock"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Pending Admission</span>
-                                <span class="info-box-number">5</span>
+                                <span class="info-box-text">Total Notice</span>
+                                <span class="info-box-number">
+                                    @php
+                                        $notice = \App\Models\Notice::all();
+                                    @endphp
+                                    {{ $notice->count() }}
+                                </span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -354,7 +421,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <div class="info-box-content">
                                 <span class="info-box-text">Today Admission</span>
                                 <span class="info-box-number">
-                                    {{ $today_admission->count() }}
+                                    {{-- {{ $today_admission->count() }} --}}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -443,7 +510,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     @endif
    @if (Session::get('notice_delete'))
     <script>
-        swal("Woff!", "{{ Session::get('notice_delete') }}", "error");
+        swal("!", "{{ Session::get('notice_delete') }}", "error");
     </script>
     @endif
    @if (Session::get('photo'))

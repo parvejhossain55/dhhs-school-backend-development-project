@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 // use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticeController;
-
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,6 +66,21 @@ Route::middleware('auth')->group(function() {
     Route::get('/photo-gallery/edit/{id}', [GalleryController::class, 'edit']);
     Route::post('/update/gallery/{id}', [GalleryController::class, 'update']);
     Route::get('/photo-gallery/delete/{id}', [GalleryController::class, 'destroy']);
+
+    // Student Informatin
+    Route::get('/total/student/', [StudentController::class, 'index'])->name('total.student');
+    Route::get('/add/student', [StudentController::class, 'create'])->name('add.student');
+    Route::post('/student/store/', [StudentController::class, 'store'])->name('student.store');
+    Route::get('/student/edit/{id}', [StudentController::class, 'edit']);
+    Route::post('/student/update/', [StudentController::class, 'update'])->name('student.update');
+    Route::get('/student/delete/{id}', [StudentController::class, 'delete']);
+
+    // class lsit
+    Route::get('/class/six/', [StudentController::class, 'class_six'])->name('class.six');
+    Route::get('/class/seven/', [StudentController::class, 'class_seven'])->name('class.seven');
+    Route::get('/class/eight/', [StudentController::class, 'class_eight'])->name('class.eight');
+    Route::get('/class/nine/', [StudentController::class, 'class_nine'])->name('class.nine');
+    Route::get('/class/ten/', [StudentController::class, 'class_ten'])->name('class.ten');
     
 });
     

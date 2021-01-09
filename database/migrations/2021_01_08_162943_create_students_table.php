@@ -21,11 +21,11 @@ class CreateStudentsTable extends Migration
             $table->string('gender');
             $table->string('roll');
             $table->string('class');
+            $table->string('section');
             $table->string('address');
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      *
