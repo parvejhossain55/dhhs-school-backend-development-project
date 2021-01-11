@@ -12,18 +12,15 @@
     <!-- Favicons -->
     <!-- <link href="frontend/assets/img/favicon.png" rel="icon">
   <link href="frontend/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     {{-- DataTables --}}
     <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Vendor CSS Files -->
-    <link href="frontend/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="frontend/assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-
+    <link href="{{ asset('frontend/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/assets/vendor/icofont/icofont.min.css') }}" rel="stylesheet">    
     <!-- Template Main CSS File -->
     <link href="frontend/assets/css/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -52,10 +49,10 @@
                         <li class="drop-down"><a href="">ছাত্র/ছাত্রির তথ্য</a>
                             <ul>
                                 <li><a href="{{ url('/class-six') }}">ষষ্ঠ শ্রেণী</a></li>
-                                <li><a href="{{ url('/class-six') }}">সপ্তম শ্রেণী</a></li>
-                                <li><a href="{{ url('/admission') }}">অষ্টম শ্রেণী</a></li>
-                                <li><a href="{{ url('/admission') }}">নবম শ্রেণী</a></li>
-                                <li><a href="{{ url('/admission') }}">দশম শ্রেণী</a></li>
+                                <li><a href="{{ url('/class-seven') }}">সপ্তম শ্রেণী</a></li>
+                                <li><a href="{{ url('/class-eight') }}">অষ্টম শ্রেণী</a></li>
+                                <li><a href="{{ url('/class-nine') }}">নবম শ্রেণী</a></li>
+                                <li><a href="{{ url('/class-ten') }}">দশম শ্রেণী</a></li>
                             </ul>
                         </li>
                         {{-- <li class="drop-down"><a href="">ভর্তির আবেদন</a>
@@ -216,6 +213,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     {{-- DataTables --}}
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
 
     <!-- Template Main JS File -->
     <script src="frontend/assets/js/app.js"></script>
@@ -226,7 +224,9 @@
     @endif
     <script>
         $(document).ready( function () {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                "pageLength": 25
+            });
         } );
     </script>
 </body>

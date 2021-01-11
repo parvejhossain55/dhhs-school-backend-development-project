@@ -85,31 +85,31 @@ class StudentController extends Controller
     // class six
     public function class_six()
     {
-        $students = Student::where('class', '=', 'Six')->get();
+        $students = Student::where('class', '=', 6)->get();
         return view('backend.student.class-six', compact('students'));
     }
     // class seven
     public function class_seven()
     {
-        $students = Student::where('class', '=', 'Seven')->get();
+        $students = Student::where('class', '=', 7)->get();
         return view('backend.student.class-seven', compact('students'));
     }
     // class eight
     public function class_eight()
     {
-        $students = Student::where('class', '=', 'Eight')->get();
+        $students = Student::where('class', '=', 8)->get();
         return view('backend.student.class-eight', compact('students'));
     }
     // class nine
     public function class_nine()
     {
-        $students = Student::where('class', '=', 'Nine')->get();
+        $students = Student::where('class', '=', 9)->get();
         return view('backend.student.class-nine', compact('students'));
     }
     // class nine
     public function class_ten()
     {
-        $students = Student::where('class', '=', 'Ten')->get();
+        $students = Student::where('class', '=', 10)->get();
         return view('backend.student.class-ten', compact('students'));
     }
 }

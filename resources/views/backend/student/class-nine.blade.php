@@ -5,7 +5,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">Total student List</h3>
+                <h3 class="card-title">Total student <span class="badge badge-success mx-1">{{ $students->count() }}</span>in Class Six</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">

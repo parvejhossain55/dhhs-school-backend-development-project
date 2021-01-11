@@ -71,11 +71,11 @@
                         <div class="form-group">
                            <label for="exampleFormControlSelect3">Class</label>
                            <select class="form-control" name="class" id="exampleFormControlSelect3">
-                             <option {{ $student->class == 'Six' ? 'selected' : '' }} value="Six">Six</option>
-                             <option {{ $student->class == 'Seven' ? 'selected' : '' }} value="Seven">Seven</option>
-                             <option {{ $student->class == 'Eight' ? 'selected' : '' }} value="Eight">Eight</option>
-                             <option {{ $student->class == 'Nine' ? 'selected' : '' }} value="Nine">Nine</option>
-                             <option {{ $student->class == 'Ten' ? 'selected' : '' }} value="Ten">Ten</option>
+                             <option {{ $student->class == 6 ? 'selected' : '' }} value="Six">Six</option>
+                             <option {{ $student->class == 7 ? 'selected' : '' }} value="Seven">Seven</option>
+                             <option {{ $student->class == 8 ? 'selected' : '' }} value="Eight">Eight</option>
+                             <option {{ $student->class == 9 ? 'selected' : '' }} value="Nine">Nine</option>
+                             <option {{ $student->class == 10 ? 'selected' : '' }} value="Ten">Ten</option>
                            </select>
                         </div>
                         @error('class')
@@ -97,7 +97,7 @@
                      <div class="col-md-6">
                         <div class="form-group">
                            <label for="exampleFormControlSelect5">Address</label>
-                           <textarea class="form-control" name="address" id="exampleFormControlSelect5" cols="30" rows="1">{{ $student->address }}</textarea>
+                           <textarea class="form-control" name="address" id="exampleFormControlSelect5" cols="30" rows="2">{{ $student->address }}</textarea>
                          </div>
                      </div>
                   </div>

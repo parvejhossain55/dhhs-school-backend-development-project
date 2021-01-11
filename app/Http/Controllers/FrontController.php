@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Admission;
 use App\Models\Gallery;
 use App\Models\Notice;
+use App\Models\Student;
 use Barryvdh\DomPDF\Facade as PDF;
 
 class FrontController extends Controller
@@ -49,7 +50,32 @@ class FrontController extends Controller
     // Class Six Student Data
     public function getClassSix()
     {
-        return view('frontend/six');
+        $students = Student::where('class', 6)->get();   
+        return view('frontend.student.six', compact('students'));
+    }    
+    // Class Seven Student Data
+    public function getClassSeven()
+    {
+        $students = Student::where('class', 7)->get();   
+        return view('frontend.student.seven', compact('students'));
+    }
+    // Class Eight Student Data
+    public function getClassEight()
+    {
+        $students = Student::where('class', 8)->get();   
+        return view('frontend.student.eight', compact('students'));
+    }
+    // Class Nine Student Data
+    public function getClassNine()
+    {
+        $students = Student::where('class', 9)->get();   
+        return view('frontend.student.nine', compact('students'));
+    }
+    // Class Ten Student Data
+    public function getClassTen()
+    {
+        $students = Student::where('class', 10)->get();   
+        return view('frontend.student.ten', compact('students'));
     }
     
 }

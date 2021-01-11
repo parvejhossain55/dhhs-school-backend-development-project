@@ -1157,3 +1157,22 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+/* class view page datatable class */
+.page-item.active .page-link {
+	background-color: #5fcf80;
+	border-color: #5fcf80;
+}
+.page-link {
+	color: #5fcf80;
+}
+.page-link:hover {
+	z-index: 2;
+	color: #5fcf80;
+	text-decoration: none;
+	background-color: #e9ecef;
+	border-color: #dee2e6;
+}
+.dataTables_paginate{
+  padding-bottom: 8px;
+}

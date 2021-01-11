@@ -31,13 +31,16 @@ Route::view('/teacher-info', 'frontend.teacher-info');
 Route::get('/notice-board', [FrontController::class, 'noticeBoard']);
 Route::get('/photo-gallery', [FrontController::class, 'photoGallery']);
 Route::view('/contact', 'frontend.contact');
+
 // class wise student view
 Route::get('/class-six', [FrontController::class, 'getClassSix']);
+Route::get('/class-seven', [FrontController::class, 'getClassSeven']);
+Route::get('/class-eight', [FrontController::class, 'getClassEight']);
+Route::get('/class-nine', [FrontController::class, 'getClassNine']);
+Route::get('/class-ten', [FrontController::class, 'getClassTen']);
 
 // Bakcend Route Start
-
 Auth::routes();
-
 Route::middleware('auth')->group(function() {
     
     Route::get('/backends', function(){
