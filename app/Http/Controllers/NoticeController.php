@@ -41,7 +41,7 @@ class NoticeController extends Controller
             'notice_file' => $final_file,
         ]);
 
-        return redirect()->route('all.notice')->with('notice_publish', 'You Are Successfully Notice Published');
+        return redirect()->route('all.notice')->with('success', 'You Are Successfully Notice Published');
     }
 
     public function edit($id)
@@ -85,13 +85,13 @@ class NoticeController extends Controller
                 'notice_file' => $final_file
             ]);
                 
-            return redirect()->route('all.notice')->with('notice_update', 'You Are Successfully Update in Your School Notice');
+            return redirect()->route('all.notice')->with('success', 'You Are Successfully Update in Your School Notice');
         } else {
             Notice::find($id)->update([
                 'notice_title' => $request->notice_title
             ]);
     
-            return redirect()->route('all.notice')->with('notice_update', 'You Are Successfully Update Your School Notice');
+            return redirect()->route('all.notice')->with('success', 'You Are Successfully Update Your School Notice');
         }
     }
 
@@ -101,6 +101,6 @@ class NoticeController extends Controller
         $old_file = Notice::find($id);
         unlink($old_file->notice_file);
         Notice::find($id)->delete();
-        return redirect()->back()->with('notice_delete', 'You Are Succesfully Notice Deleted');
+        return redirect()->back()->with('error', 'You Are Succesfully Notice Deleted');
     }
 }

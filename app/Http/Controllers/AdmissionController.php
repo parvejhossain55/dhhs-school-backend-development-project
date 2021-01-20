@@ -198,7 +198,7 @@ class AdmissionController extends Controller
             'tranx_id' => $request->tranx_id,
         ]);
 
-        return redirect()->route('total.admission')->with('adm_update', 'Admission Information Updated');
+        return redirect()->route('total.admission')->with('success', 'Admission Information Updated');
     }
 
     public function delete($id)
@@ -207,7 +207,7 @@ class AdmissionController extends Controller
         unlink($data->photo);
         unlink($data->signature);
         Admission::find($id)->delete();
-        return redirect()->back()->with('admison_delete', 'Application Successfully Deleted');
+        return redirect()->back()->with('error', 'Application Successfully Deleted');
     }
 
     public function todayAdmission()

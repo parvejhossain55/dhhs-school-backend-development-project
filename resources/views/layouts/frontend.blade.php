@@ -14,6 +14,9 @@
   <link href="frontend/assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    {{-- FancyBox --}}
+    {{-- <link rel="stylesheet" href="{{ asset('frontend/assets/fancybox/source/jquery.fancybox-1.3.4.css') }}" type="text/css" media="screen" /> --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     {{-- DataTables --}}
     <link href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Vendor CSS Files -->
@@ -36,14 +39,15 @@
 
         <!-- ===== Start Header Navigation Bar -->
         <header id="header" class="d-none d-lg-block mb-3">
-            <div class="">
+            <div style="navigation">
                 <nav class="nav-menu ">
                     <ul class="mx-auto">
                         <li class="active"><a href="{{ url('/') }}">হোম</a></li>
                         <li class="drop-down"><a href="">আমাদের সম্পর্কে </a>
                             <ul>
-                                <li><a href="{{ url('/about') }}">বিদ্যালয় সম্পর্ক </a></li>
+                                <li><a href="{{ url('/about') }}">বিদ্যালয় সম্পর্কে </a></li>
                                 <li><a href="{{ url('/head-message') }}">প্রধান শিক্ষকের বানী</a></li>
+                                <li><a href="{{ url('/achivement') }}">আমাদের অর্জন </a></li>
                             </ul>
                         </li>
                         <li class="drop-down"><a href="">ছাত্র/ছাত্রির তথ্য</a>
@@ -55,6 +59,7 @@
                                 <li><a href="{{ url('/class-ten') }}">দশম শ্রেণী</a></li>
                             </ul>
                         </li>
+                        <li><a href="{{ route('online.class') }}">অনলাইন ক্লাস</a></li>
                         {{-- <li class="drop-down"><a href="">ভর্তির আবেদন</a>
                             <ul>
                                 <li><a href="{{ url('/admission-details') }}">আবেদনের নিয়মাবলী</a></li>
@@ -160,7 +165,7 @@
                             <h4>মেনু </h4>
                             <ul>
                                 <li><i class="icofont-double-right"></i><a href="{{ url('/') }}">হোম</a></li>
-                                <li><i class="icofont-double-right"></i><a href="{{ url('/admission') }}">ভর্তির আবেদন</a>
+                                <li><i class="icofont-double-right"></i><a href="{{ url('/achivement') }}">আমাদের অর্জন</a>
                                 </li>
                                 <li><i class="icofont-double-right"></i><a href="#">রেজাল্ট</a></li>
                                 <li><i class="icofont-double-right"></i><a href="{{ url('/about') }}">বিদ্যালয় সম্পর্কে</a></li>
@@ -191,43 +196,58 @@
             <div class="d-block py-4 align-items-center" id="footer-text">
                 <div class="text-center">
                     <div class="copyright" style="font-size: 15px;">
-                        &copy; Copyright 2020 - All Rights Reserved | <span>Developed by : <a class="text-danger" target="_blank" href="https://www.facebook.com/parvej.hossain.155">Parvej Hossain</a></span>
+                        &copy; Copyright @php($date = date('Y')){{ $date }} - All Rights Reserved | <span>Design & Developed by : <a class="text-danger" target="_blank" href="https://www.facebook.com/parvej.hossain.155">Parvej Hossain</a></span>
                     </div>
                 </div>
 
             </div>
         </footer><!-- End Footer -->
-        
-
 
     </main><!-- End #main -->
 
     <a href="#" class="back-to-top"><i class="icofont-arrow-up"></i></a>
-    <div id="preloader"></div>
+    {{-- <div id="preloader"></div> --}}
 
     <!-- Vendor JS Files -->
-    <script src="frontend/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="frontend/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    {{-- <script src="{{ asset('frontend/assets/vendor/jquery/jquery.min.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="{{ asset('frontend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('frontend/assets/vendor/jquery.easing/jquery.easing.min.js') }}"></script>
     {{-- Sweet Alert --}}
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    {{-- FancyBox --}}
+    {{-- <script type="text/javascript" src="{{ asset('frontend/asset/fancybox/jquery.fancybox-1.3.4.pack.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     {{-- DataTables --}}
     <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
-
     <!-- Template Main JS File -->
-    <script src="frontend/assets/js/app.js"></script>
+    <script src="{{ asset('frontend/assets/js/app.js') }}"></script>
     @if (Session::get('application'))
     <script>
         swal("Greet!", "{{ Session::get('application') }}", "success");
     </script>
     @endif
     <script>
+        // For DataTable
         $(document).ready( function () {
             $('#myTable').DataTable({
                 "pageLength": 25
             });
-        } );
+            // fancy box
+            $('[data-fancybox="images"]').fancybox({
+                buttons : [ 
+                    'slideShow',
+                    'share',
+                    'zoom',
+                    'fullScreen',
+                    'close'
+                ],
+                thumbs : {
+                    autoStart : true
+                }
+            });
+        });
     </script>
 </body>
 

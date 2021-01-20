@@ -40,7 +40,7 @@ class GalleryController extends Controller
             'gallery_photo' => $final_file
         ]);
 
-        return redirect()->route('all.photo')->with('photo', 'You Are Successfully Add Photo in Photo Gallery');
+        return redirect()->route('all.photo')->with('success', 'You Are Successfully Add Photo in Photo Gallery');
     }
 
     public function edit($id)
@@ -75,13 +75,13 @@ class GalleryController extends Controller
                 'gallery_photo' => $final_file
             ]);
     
-            return redirect()->route('all.photo')->with('photo', 'You Are Successfully Update Photo in Photo Gallery');
+            return redirect()->route('all.photo')->with('success', 'You Are Successfully Update Photo in Photo Gallery');
         } else {
             Gallery::find($id)->update([
                 'gallery_desc' => $request->gallery_desc,
             ]);
     
-            return redirect()->route('all.photo')->with('photo', 'You Are Successfully Update Photo in Photo Gallery');
+            return redirect()->route('all.photo')->with('success', 'You Are Successfully Update Photo in Photo Gallery');
         }
     }
     
@@ -90,6 +90,6 @@ class GalleryController extends Controller
         $img = Gallery::find($id);
         unlink($img->gallery_photo);
         Gallery::find($id)->delete();
-        return redirect()->route('all.photo')->with('photo', 'You Are Successfully Deleted Photo in Photo Gallery');
+        return redirect()->route('all.photo')->with('error', 'You Are Successfully Deleted Photo in Photo Gallery');
     }
 }

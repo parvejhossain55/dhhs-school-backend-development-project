@@ -43,7 +43,7 @@ class StudentController extends Controller
             'address' => $request->address
         ]);
 
-        return redirect()->route('total.student')->with('notice_publish', 'Student Successfully Added');
+        return redirect()->route('total.student')->with('success', 'Student Successfully Added');
     }
     // student edit
     public function edit($id)
@@ -73,13 +73,13 @@ class StudentController extends Controller
             'section' => $request->section,
             'address' => $request->address
         ]);
-        return redirect()->back()->with('notice_publish', 'Student Successfully Edited');
+        return redirect()->back()->with('success', 'Student Successfully Edited');
     }
     // student delete
     public function delete($id)
     {
         Student::find($id)->delete();
-        return redirect()->back()->with('notice_delete', 'Student Successfully Deleted');
+        return redirect()->back()->with('error', 'Student Successfully Deleted');
     }
 
     // class six

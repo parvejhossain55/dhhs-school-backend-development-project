@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AchivementController;
 use App\Http\Controllers\AdmissionController;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\GalleryController;
@@ -7,7 +8,9 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 // use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\OnlineClassController;
 use App\Http\Controllers\StudentController;
+use App\Models\OnlineClass;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,18 +29,20 @@ Route::get('/head-message', [FrontController::class, 'headMessage']);
 Route::get('/admission-details', [FrontController::class, 'admissionDetails']);
 Route::view('/admission','frontend.admission');
 
-Route::post('admission/submit', [AdmissionController::class, 'store'])->name('admission.submit');
+Route::post('/admission/submit', [AdmissionController::class, 'store'])->name('admission.submit');
+Route::get('/online-class', [FrontController::class, 'online_class'])->name('online.class');
 Route::view('/teacher-info', 'frontend.teacher-info');
 Route::get('/notice-board', [FrontController::class, 'noticeBoard']);
 Route::get('/photo-gallery', [FrontController::class, 'photoGallery']);
 Route::view('/contact', 'frontend.contact');
-
+Route::get('/achivement', [FrontController::class, 'achivement']);
 // class wise student view
 Route::get('/class-six', [FrontController::class, 'getClassSix']);
 Route::get('/class-seven', [FrontController::class, 'getClassSeven']);
 Route::get('/class-eight', [FrontController::class, 'getClassEight']);
 Route::get('/class-nine', [FrontController::class, 'getClassNine']);
 Route::get('/class-ten', [FrontController::class, 'getClassTen']);
+
 
 // Bakcend Route Start
 Auth::routes();
@@ -84,6 +89,21 @@ Route::middleware('auth')->group(function() {
     Route::get('/class/eight/', [StudentController::class, 'class_eight'])->name('class.eight');
     Route::get('/class/nine/', [StudentController::class, 'class_nine'])->name('class.nine');
     Route::get('/class/ten/', [StudentController::class, 'class_ten'])->name('class.ten');
-    
+
+    // achivement
+    Route::get('/all/achivemet/', [AchivementController::class, 'index'])->name('all.achivement');
+    Route::get('/school/achivement/', [AchivementController::class, 'create'])->name('add.achivement');
+    Route::post('/add/achive/', [AchivementController::class, 'store'])->name('add.achive');
+    Route::get('/achivement/edit/{id}', [AchivementController::class, 'edit']);
+    Route::post('/update/achive/{id}', [AchivementController::class, 'update']);
+    Route::get('/achivement/delete/{id}', [AchivementController::class, 'destroy']);
+
+    // Online Class
+    Route::get('/online/class/all/', [OnlineClassController::class, 'index'])->name('all.class');
+    Route::get('/online/class/add/', [OnlineClassController::class, 'create'])->name('add.class');
+    Route::post('/online/class/add/', [OnlineClassController::class, 'store'])->name('add.online.class');
+    Route::get('/on-class/edit/{id}', [OnlineClassController::class, 'edit']);
+    Route::post('/online/class/update', [OnlineClassController::class, 'update'])->name('online.class.update');
+    Route::get('/on-class/delete/{id}', [OnlineClassController::class, 'delete']);
 });
     

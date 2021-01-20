@@ -204,7 +204,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    {{-- <i class=" fas fa-tachometer-alt"></i> --}}
+                    <i class="nav-icon fas fa-chalkboard-teacher"></i>
+                    <p>
+                        Online Class
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview ml-3">
+                    <li class="nav-item">
+                        <a href="{{ route('all.class') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>All Class</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('add.class') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Add Class</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
                     <i class="nav-icon fas fa-images"></i>
                     <p>
                         Photo Gallery
@@ -222,6 +244,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="{{ route('add.photo') }}" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add Photo</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-trophy"></i>
+                    <p>
+                        Achivement
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview ml-3">
+                    <li class="nav-item">
+                        <a href="{{ route('all.achivement') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>All Achivement</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('add.achivement') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Add Achivement</p>
                         </a>
                     </li>
                 </ul>
@@ -274,7 +319,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    {{-- <i class=" fas fa-tachometer-alt"></i> --}}
                     <i class="fas fa-calendar-alt nav-icon"></i>
                     <p>
                         Class Routine
@@ -298,7 +342,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
-                    {{-- <i class="nav-icon fas fa-tachometer-alt"></i> --}}
                     <i class="nav-icon fas fa-envelope-open-text"></i>
                     <p>
                         Mailbox
@@ -350,7 +393,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
+        <!-- Content Header Page header -->
         {{-- <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
@@ -419,9 +462,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                     class="fas fa-calendar-check"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">Today Admission</span>
+                                <span class="info-box-text">Photo Gallery</span>
                                 <span class="info-box-number">
-                                    {{-- {{ $today_admission->count() }} --}}
+                                    @php
+                                        $photo = \App\Models\Gallery::all();
+                                    @endphp
+                                    {{ $photo->count() }}
                                 </span>
                             </div>
                             <!-- /.info-box-content -->
@@ -431,11 +477,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <!-- /.col -->
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-trophy"></i></span>
 
                             <div class="info-box-content">
-                                <span class="info-box-text">New Members</span>
-                                <span class="info-box-number">100</span>
+                                <span class="info-box-text">Achivement</span>
+                                <span class="info-box-number">
+                                    @php
+                                        $achive = \App\Models\Achivement::all();
+                                    @endphp
+                                    {{ $achive->count() }}
+                                </span>
                             </div>
                             <!-- /.info-box-content -->
                         </div>
@@ -470,12 +521,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Main Footer -->
     <footer class="main-footer">
         <!-- To the right -->
-        <div class="float-right d-none d-sm-inline">
+        {{-- <div class="float-right d-none d-sm-inline">
             Anything you want
-        </div>
+        </div> --}}
         <!-- Default to the left -->
-        <strong>Copyright &copy; 2014-2020 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
-        reserved.
+        <strong>Copyright &copy; @php($date = date('Y')){{ $date }} <a href="https://damkura-hhs.edu.bd">DHHS</a>.</strong> All rights reserved. | Design & Developed by : <a href="https://facebook.com/parvej.hossain.155">Parvej Hossain</a>
     </footer>
     </div>
     <!-- ./wrapper -->
@@ -498,36 +548,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         } );
     </script>
     
-   @if (Session::get('notice_publish'))
+    @if (Session::get('success'))
     <script>
-        swal("Greet!", "{{ Session::get('notice_publish') }}", "success");
+        swal("Greet!", "{{ Session::get('success') }}", "success");
     </script>
     @endif
-   @if (Session::get('notice_update'))
-    <script>
-        swal("Greet!", "{{ Session::get('notice_update') }}", "success");
-    </script>
+    @if (Session::get('error'))
+     <script>
+         swal("!", "{{ Session::get('error') }}", "error");
+     </script>
     @endif
-   @if (Session::get('notice_delete'))
-    <script>
-        swal("!", "{{ Session::get('notice_delete') }}", "error");
-    </script>
-    @endif
-   @if (Session::get('photo'))
-    <script>
-        swal("Greet!", "{{ Session::get('photo') }}", "success");
-    </script>
-    @endif
-   @if (Session::get('adm_update'))
-    <script>
-        swal("Greet!", "{{ Session::get('adm_update') }}", "success");
-    </script>
-    @endif
-   @if (Session::get('admison_delete'))
-    <script>
-        swal("Greet!", "{{ Session::get('admison_delete') }}", "success");
-    </script>
-    @endif
+
 </body>
 
 </html>
