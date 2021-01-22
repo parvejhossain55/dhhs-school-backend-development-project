@@ -33,24 +33,24 @@
         <!-- ======= Top Header Background Image and School Name ======= -->
         <div class="row mt-3">
             <div class="col">
-                <img src="frontend/assets/img/headbg.jpg" width="100%" height="150" alt="">
+                <img src="frontend/assets/img/header.png" width="100%" height="150" alt="">
             </div>
         </div>
 
         <!-- ===== Start Header Navigation Bar -->
         <header id="header" class="d-none d-lg-block mb-3">
-            <div style="navigation">
-                <nav class="nav-menu ">
-                    <ul class="mx-auto">
+            <div class="navigation">
+                <nav class="nav-menu">
+                    <ul>
                         <li class="active"><a href="{{ url('/') }}">হোম</a></li>
-                        <li class="drop-down"><a href="">আমাদের সম্পর্কে </a>
+                        <li class="drop-down"><a href="javascript:void(0)">আমাদের সম্পর্কে </a>
                             <ul>
                                 <li><a href="{{ url('/about') }}">বিদ্যালয় সম্পর্কে </a></li>
                                 <li><a href="{{ url('/head-message') }}">প্রধান শিক্ষকের বানী</a></li>
                                 <li><a href="{{ url('/achivement') }}">আমাদের অর্জন </a></li>
                             </ul>
                         </li>
-                        <li class="drop-down"><a href="">ছাত্র/ছাত্রির তথ্য</a>
+                        <li class="drop-down"><a href="javascript:void(0)">ছাত্র/ছাত্রির তথ্য</a>
                             <ul>
                                 <li><a href="{{ url('/class-six') }}">ষষ্ঠ শ্রেণী</a></li>
                                 <li><a href="{{ url('/class-seven') }}">সপ্তম শ্রেণী</a></li>
@@ -147,17 +147,11 @@
                         <div class="col-lg-3 col-md-6 footer-links">
                             <h4>ইউসফুল লিংক </h4>
                             <ul>
-                                <li><i class="icofont-double-right"></i><a target="_blank"
-                                        href="https://bangladesh.gov.bd/index.php">বাংলাদেশ জাতীয় তথ্য বাতায়ন</a></li>
-                                <li><i class="icofont-double-right"></i><a target="_blank"
-                                        href="https://moedu.gov.bd">শিক্ষা মন্ত্রণালয়</a></li>
-                                <li><i class="icofont-double-right"></i><a target="_blank"
-                                        href="www.shed.gov.bd">মাধ্যমিক ও উচ্চ শিক্ষা বিভাগ</a></li>
-                                <li><i class="icofont-double-right"></i><a target="_blank" href="www.dshe.gov.bd">
-                                        মাধ্যমিক ও উচ্চশিক্ষা অধিদপ্তর</a></li>
-                                <li><i class="icofont-double-right"></i><a target="_blank"
-                                        href="http://www.rajshahieducationboard.gov.bd">মাধ্যমিক ও উচ্চ মাধ্যমিক শিক্ষা
-                                        বোর্ড রাজশাহী</a></li>
+                                <li><i class="icofont-double-right"></i><a target="_blank" href="https://bangladesh.gov.bd/index.php">বাংলাদেশ জাতীয় তথ্য বাতায়ন</a></li>
+                                <li><i class="icofont-double-right"></i><a target="_blank" href="https://moedu.gov.bd">শিক্ষা মন্ত্রণালয়</a></li>
+                                <li><i class="icofont-double-right"></i><a target="_blank"  href="www.shed.gov.bd">মাধ্যমিক ও উচ্চ শিক্ষা বিভাগ</a></li>
+                                <li><i class="icofont-double-right"></i><a target="_blank" href="www.dshe.gov.bd">মাধ্যমিক ও উচ্চশিক্ষা অধিদপ্তর</a></li>
+                                <li><i class="icofont-double-right"></i><a style="line-height: 20px" target="_blank" href="http://www.rajshahieducationboard.gov.bd">মাধ্যমিক ও উচ্চ মাধ্যমিক শিক্ষা বোর্ড রাজশাহী</a></li>
                             </ul>
                         </div>
 
@@ -165,8 +159,7 @@
                             <h4>মেনু </h4>
                             <ul>
                                 <li><i class="icofont-double-right"></i><a href="{{ url('/') }}">হোম</a></li>
-                                <li><i class="icofont-double-right"></i><a href="{{ url('/achivement') }}">আমাদের অর্জন</a>
-                                </li>
+                                <li><i class="icofont-double-right"></i><a href="{{ url('/achivement') }}">আমাদের অর্জন</a></li>
                                 <li><i class="icofont-double-right"></i><a href="#">রেজাল্ট</a></li>
                                 <li><i class="icofont-double-right"></i><a href="{{ url('/about') }}">বিদ্যালয় সম্পর্কে</a></li>
                                 <li><i class="icofont-double-right"></i><a href="{{ url('/notice-board') }}">নোটিশ বোর্ড</a></li>
@@ -184,11 +177,12 @@
                                 <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
                                 <a href="#" class="linkedin"><i class="icofont-youtube-play"></i></a>
                             </div>
+                            {{-- website hit counter --}}
                             <div class="ml-3 mt-4">
                                 <script type="text/javascript" src="http://services.webestools.com/cpt_visitors/68422-10-6.js"></script>
-                                </div>
-                                <a href="http://www.webestools.com/" style="display:block;text-align:center;" title="Tools services webmasters counters generators scripts tutorials free"></a>
                             </div>
+                            <a href="http://www.webestools.com/" style="display:block;text-align:center;" title="Tools services webmasters counters generators scripts tutorials free"></a>
+                        </div>
                     </div>
                 </div>
             </div>

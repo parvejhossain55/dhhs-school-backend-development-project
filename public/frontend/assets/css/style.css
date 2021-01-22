@@ -25,7 +25,7 @@
 #carousel {
   padding: 20px 0px;
   overflow: hidden;
-  height: 400px;
+  height: 420px;
 }
 
 /* Annouce setion */
@@ -123,6 +123,10 @@ legend.custom-border {
 }
 .form-button:hover{
   color: #fff;
+}
+/* notice page table design class */
+.notice-list td {
+  vertical-align: middle;
 }
 /*--------------------------------------------------------------
 # General
@@ -714,6 +718,9 @@ section {
 /*--------------------------------------------------------------
 # Events
 --------------------------------------------------------------*/
+.card {
+	border: 1px solid #5fcf80e3;
+}
 .events .card {
   border: 0;
   padding: 0 30px;

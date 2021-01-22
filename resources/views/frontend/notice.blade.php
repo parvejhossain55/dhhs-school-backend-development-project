@@ -27,15 +27,16 @@
 @section('onlybody')
    <div class="row mt-3 mt-lg-0">
       <div class="col">
-         <div class="teacher-list">
+         <div class="notice-list">
             <div class="table-responsive">
+              {{-- <div class="card"> --}}
                <table class="table table-bordered">
                   <thead class="bg-success-one text-light">
                     <tr>
                       <th>নং</th>
                       <th>নোটিশের নাম</th>
                       <th>প্রকাশের তারিখ</th>
-                      <th>বিস্তারিত </th>
+                      <th>বিস্তারিত</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -68,6 +69,7 @@
                     </tr> --}}
                   </tbody>
                 </table>
+              </div>
             </div>
          </div>
       </div>

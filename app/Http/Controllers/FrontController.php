@@ -39,7 +39,7 @@ class FrontController extends Controller
 
     public function noticeBoard()
     {
-        $data = Notice::latest()->get();
+        $data = Notice::latest()->take(6)->get();
         return view('frontend.notice', compact('data'));
     }
 

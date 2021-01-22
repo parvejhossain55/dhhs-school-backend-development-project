@@ -9,10 +9,8 @@
         <div class="card-body">
          <div class="row">
              @foreach ($online_class as $item)
-             <div class="col-md-3">
-                 <div class="card mb-4">
-                    <iframe height="200" src="https://youtube.com/embed/{{ $item->iframe }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                 </div>
+             <div class="col-md-4 mb-3">
+                <iframe width="100%" height="220px" src="https://youtube.com/embed/{{ $item->iframe }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                 
              </div>
              @endforeach
          </div>
