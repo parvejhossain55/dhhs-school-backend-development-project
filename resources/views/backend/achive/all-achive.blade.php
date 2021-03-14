@@ -15,7 +15,7 @@
                             <th>Sl</th>
                             <th>Achivement Description</th>
                             <th>Photo</th>
-                            <th style="width:162px;">Action</th>
+                            <th style="width:200px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>

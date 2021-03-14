@@ -70,11 +70,11 @@
                         <div class="form-group">
                            <label for="exampleFormControlSelect3">Class</label>
                            <select class="form-control" name="class" id="exampleFormControlSelect3">
-                             <option value="Six">Six</option>
-                             <option value="Seven">Seven</option>
-                             <option value="Eight">Eight</option>
-                             <option value="Nine">Nine</option>
-                             <option value="Ten">Ten</option>
+                             <option value="6">Six</option>
+                             <option value="7">Seven</option>
+                             <option value="8">Eight</option>
+                             <option value="9">Nine</option>
+                             <option value="10">Ten</option>
                            </select>
                         </div>
                         @error('class')

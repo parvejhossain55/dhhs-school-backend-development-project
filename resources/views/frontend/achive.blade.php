@@ -12,7 +12,9 @@
            @foreach ($achive as $item)
            <div class="col-md-6">
             <div class="card mb-4">
-              <img src="{{ asset($item->achive_photo) }}" class="card-img-top" alt="achivement photo" height="350" width="100%">
+              <a href="{{ asset($item->achive_photo) }}" data-fancybox data-caption="{{ $item->achive_desc }}">
+                <img src="{{ asset($item->achive_photo) }}" class="card-img-top" alt="achivement photo" height="350" width="100%">
+              </a>              
               <div class="card-body">
                 <p class="card-text">{{ $item->achive_desc }}</p>
               </div>

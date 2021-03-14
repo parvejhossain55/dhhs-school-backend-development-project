@@ -14,10 +14,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
       <!-- DataTables -->
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
     <!-- Font Awesome -->
-    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" /> --}}
-    <link rel="stylesheet" href="{{ asset('backend/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('backend/css/adminlte.min.css') }}">
     {{-- Customizeing css --}}
@@ -77,7 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="{{ url('/backends') }}" class="brand-link">
+            <a href="{{ url('/dashboard') }}" class="brand-link">
                 {{-- <img src="{{ asset('backend/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                     style="opacity: .8"> --}}
                 <i class="nav-icon fas fa-tachometer-alt mx-3 mb-3"></i>
@@ -92,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-            <li class="nav-item menu-open">
+            <li class="nav-item">
                 <a href="javascript:void(0)" class="nav-link">
                     <i class="nav-icon fas fa-address-card"></i>
                     <p>
@@ -115,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </li>
                 </ul>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ">
                 <a href="javascript:void(0)" class="nav-link">
                     <i class="nav-icon fas fa-list"></i>
                     <p>
@@ -273,6 +272,29 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">
+                    <i class="fas fa-hand-peace nav-icon"></i>
+                    <p>
+                        Result
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview ml-3">
+                    <li class="nav-item">
+                        <a href="{{ route('all.result') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>All Result</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('add.result') }}" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Add Result</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
                     <i class="fas fa-poll-h nav-icon"></i>
                     <p>
                         Syllabus
@@ -290,29 +312,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a href="" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add Syllabus</p>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link">
-                    <i class="fas fa-hand-peace nav-icon"></i>
-                    <p>
-                        Result
-                        <i class="right fas fa-angle-left"></i>
-                    </p>
-                </a>
-                <ul class="nav nav-treeview ml-3">
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>All Result</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="" class="nav-link">
-                            <i class="far fa-circle nav-icon"></i>
-                            <p>Add Result</p>
                         </a>
                     </li>
                 </ul>
@@ -525,21 +524,20 @@ scratch. This page gets rid of all links and provides the needed markup only.
             Anything you want
         </div> --}}
         <!-- Default to the left -->
-        <strong>Copyright &copy; @php($date = date('Y')){{ $date }} <a href="https://damkura-hhs.edu.bd">DHHS</a>.</strong> All rights reserved. | Design & Developed by : <a href="https://facebook.com/parvej.hossain.155">Parvej Hossain</a>
+        <strong><span class="mr-3"></span>  Design & Developed by : <a href="https://facebook.com/parvej.hossain.155">Parvej Hossain</a></strong>
     </footer>
     </div>
     <!-- ./wrapper -->
 
     <!-- REQUIRED SCRIPTS -->
     <!-- jQuery -->
-    <script src="{{ asset('backend/plugins/jquery/jquery.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}">
-    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <!-- DataTables  & Plugins -->
-    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
     {{-- Sweet Alert --}}
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('backend/js/adminlte.min.js') }}"></script>
     <script>

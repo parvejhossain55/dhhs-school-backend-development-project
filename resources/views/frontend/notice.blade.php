@@ -25,52 +25,40 @@
 @endsection --}}
 
 @section('onlybody')
-   <div class="row mt-3 mt-lg-0">
+   <div class="row my-3 mt-lg-0">
       <div class="col">
          <div class="notice-list">
             <div class="table-responsive">
-              {{-- <div class="card"> --}}
-               <table class="table table-bordered">
-                  <thead class="bg-success-one text-light">
-                    <tr>
-                      <th>নং</th>
-                      <th>নোটিশের নাম</th>
-                      <th>প্রকাশের তারিখ</th>
-                      <th>বিস্তারিত</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @php($i=1)
-                    @foreach ($data as $item)    
+              <div class="card">
+                <div class="card-header bg-success-one">
+                  <h5>নোটিশ</h5>
+                </div>
+                <div class="card-body">
+                  <table class="table table-bordered">
+                    <thead>
                       <tr>
-                        <td>{{ $i++ }}</td>
-                        <td>{{ $item->notice_title }}</td>
-                        <td>{{ $item->created_at->format('d-m-Y') }}</td>
-                        <td><a href="{{ asset($item->notice_file) }}" class="btn btn-outline-successs"><i class="icofont-download"></i> ডাউনলোড </a></td>
+                        <th>নং</th>
+                        <th>নোটিশের নাম</th>
+                        <th>প্রকাশের তারিখ</th>
+                        <th>বিস্তারিত</th>
                       </tr>
-                    @endforeach
-                   {{-- <tr>
-                      <td>2</td>
-                      <td>শহিদ বুদ্ধিজীবী দিবস পালন সম্পর্কিত বিজ্ঞপ্তি।</td>
-                      <td>13/12/2020</td>
-                      <td><a href="#" class="btn btn-outline-successs"><i class="icofont-download"></i> ডাউনলোড </a></td>
-                    </tr>
-                    <tr>
-                      <td>3</td>
-                      <td>দ্বিতীয় হতে দশম শ্রেণি পর্যন্ত শিক্ষার্থীদের বেতন পরিশোধ সংক্রান্ত জরুরী বিজ্ঞপ্তি ১০-১২০২০২০খ্রি.</td>
-                      <td>13/12/2020</td>
-                      <td><a href="#" class="btn btn-outline-successs"><i class="icofont-download"></i> ডাউনলোড </a></td>
-                    </tr>
-                    <tr>
-                      <td>14</td>
-                      <td>তৃতীয় সপ্তাহের এ্যাসাইনমেন্ট জমাদান সম্পর্কিত বিজ্ঞপ্তি ।</td>
-                      <td>13/12/2020</td>
-                      <td><a href="#" class="btn btn-outline-successs"><i class="icofont-download"></i> ডাউনলোড </a></td>
-                    </tr> --}}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody>
+                      @php($i=1)
+                      @foreach ($data as $item)    
+                        <tr>
+                          <td>{{ $i++ }}</td>
+                          <td>{{ $item->notice_title }}</td>
+                          <td>{{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y') }}</td>
+                          <td><a href="{{ asset($item->notice_file) }}" class="btn btn-outline-successs"><i class="icofont-download"></i> ডাউনলোড </a></td>
+                        </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
+           </div>
          </div>
       </div>
    </div>

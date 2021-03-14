@@ -23,7 +23,7 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'gallery_desc' => 'required',
+            // 'gallery_desc' => 'string',
             'gallery_photo' => 'required|mimes:jpg,jpeg,png',
         ]);
 

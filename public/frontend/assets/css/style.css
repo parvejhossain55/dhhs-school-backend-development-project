@@ -1,4 +1,4 @@
-
+@import url('https://fonts.maateen.me/solaiman-lipi/font.css');
 /*--------------------------------------------------------------
 # Custom Css
 --------------------------------------------------------------*/
@@ -51,20 +51,36 @@
 
 #heade-teacher p,
 #notice-board p {
-  transition: .7s;
+  transition: .5s;
 }
 
 #head-teacher p:hover,
 #notice-board p:hover {
-  padding-left: 10px;
-  transition: .7s;
+  padding-left: 3px;
+  transition: .5s;
+}
+
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0 !important;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .bani-margin{
+    margin-top: -20px;
+  }
 }
 
 /* primary color in website */
 .bg-success-one {
-  background-color: #5fcf80;
-  color: #fff;
+	background: #5fcf80;
+	color: #fff;
 }
+/* .bg-success-one {
+	background: linear-gradient(to right, #5fcf80, #42dc70);
+	color: #fff;
+} */
 
 /* Copyright Text */
 #footer-text {
@@ -73,8 +89,7 @@
 
 /*---------- TABLE DESIGN ---------- */
 .teacher-list td img {
-	width: 100px;
-	display: block;
+	height: 110px;
 	margin: 0 auto;
 }
 
@@ -132,9 +147,20 @@ legend.custom-border {
 # General
 --------------------------------------------------------------*/
 body {
+  /* background-image: url('../img/background.jpg'); */
+  /* background-blend-mode: overlay; */
+  /* background-position: center center; */
+  /* background-repeat: no-repeat, repeat; */
+  /* background-size: cover; */
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
+  color: #444444;
+  background-color: #fff;
+}
+
+/* body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
-}
+} */
 
 a {
   color: #5fcf80;
@@ -146,8 +172,11 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
 }
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+} */
 
 /*--------------------------------------------------------------
 # Back to top button
@@ -247,8 +276,9 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   color: #37423b;
   transition: 0.3s;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'SolaimanLipi', Arial, sans-serif !important;
   font-weight: 500;
 }
 
@@ -284,7 +314,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-menu .drop-down ul a {
   padding: 10px 20px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   text-transform: none;
   color: #37423b;
@@ -719,7 +749,8 @@ section {
 # Events
 --------------------------------------------------------------*/
 .card {
-	border: 1px solid #5fcf80e3;
+	border: 1px solid #5fcf80;
+	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.02), 0 1px 20px 0 rgba(0, 0, 0, 0.05);
 }
 .events .card {
   border: 0;
@@ -953,7 +984,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
   color: #37423b;
-  font-size: 14px;
+  font-size: 15px;
   background: #eef0ef;
 	box-shadow: 0 -.1px 1px #dbb2b2;
 }

@@ -58,15 +58,7 @@ class NoticeController extends Controller
 
         $notice_file = $request->file('notice_file');
         $old_file = $request->old_notice_file;
-        // $unique_name = hexdec(uniqid());
-        // $file_ext = strtolower($notice_file->getClientOriginalExtension());
-        // $file_name = $unique_name.'.'.$file_ext;
-        // $up_location = 'uploads/notice/';
-        // $final_file = $up_location.$file_name;
-        // $notice_file->move(public_path($up_location), $file_name);
-
-        // $notice_file = $request->file('notice_file');
-
+        
         if ($notice_file) {
             $unique_name = hexdec(uniqid());
             $file_ext = strtolower($notice_file->getClientOriginalExtension());
@@ -74,9 +66,6 @@ class NoticeController extends Controller
             $up_location = 'uploads/notice/';
             $final_file = $up_location.$file_name;
             $notice_file->move(public_path($up_location), $file_name);
-            
-            // dd();
-            // die();
 
             unlink($old_file);
     

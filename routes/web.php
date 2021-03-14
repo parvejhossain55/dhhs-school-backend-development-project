@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 // use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\OnlineClassController;
+use App\Http\Controllers\ResultController;
 use App\Http\Controllers\StudentController;
 use App\Models\OnlineClass;
 
@@ -25,6 +26,7 @@ use App\Models\OnlineClass;
     
 Route::get('/', [FrontController::class, 'home']);
 Route::get('/about', [FrontController::class, 'about']);
+Route::get('/sriti-kotha', [FrontController::class, 'sriti']);
 Route::get('/head-message', [FrontController::class, 'headMessage']);
 Route::get('/admission-details', [FrontController::class, 'admissionDetails']);
 Route::view('/admission','frontend.admission');
@@ -36,6 +38,8 @@ Route::get('/notice-board', [FrontController::class, 'noticeBoard']);
 Route::get('/photo-gallery', [FrontController::class, 'photoGallery']);
 Route::view('/contact', 'frontend.contact');
 Route::get('/achivement', [FrontController::class, 'achivement']);
+// Route::get('/syllabus', [FrontController::class, 'syllabus'])->name('syllabus');
+Route::get('/result', [FrontController::class, 'result'])->name('result');
 // class wise student view
 Route::get('/class-six', [FrontController::class, 'getClassSix']);
 Route::get('/class-seven', [FrontController::class, 'getClassSeven']);
@@ -48,7 +52,7 @@ Route::get('/class-ten', [FrontController::class, 'getClassTen']);
 Auth::routes();
 Route::middleware('auth')->group(function() {
     
-    Route::get('/backends', function(){
+    Route::get('/dashboard', function(){
         return view('layouts.backend');
     });
 
@@ -105,5 +109,14 @@ Route::middleware('auth')->group(function() {
     Route::get('/on-class/edit/{id}', [OnlineClassController::class, 'edit']);
     Route::post('/online/class/update', [OnlineClassController::class, 'update'])->name('online.class.update');
     Route::get('/on-class/delete/{id}', [OnlineClassController::class, 'delete']);
+
+    // Result
+    Route::get('/all/result', [ResultController::class, 'index'])->name('all.result');
+    Route::get('/add/result', [ResultController::class, 'create'])->name('add.result');
+    Route::post('/result/store', [ResultController::class, 'store'])->name('result.store');
+    Route::get('/result/edit/{id}', [ResultController::class, 'edit']);
+    Route::post('/result/update/{id}', [ResultController::class, 'update']);
+    Route::get('/result/delete/{id}', [ResultController::class, 'delete']);
 });
     
+// laboratory school theke right side copy korte hobe

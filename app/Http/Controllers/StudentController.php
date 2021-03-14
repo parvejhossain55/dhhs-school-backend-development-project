@@ -63,6 +63,7 @@ class StudentController extends Controller
             'section' => 'required',
             'address' => 'required'
         ]);
+        
         Student::find($request->edit_id)->update([
             'sname' => $request->sname,
             'sfname' => $request->sfname,

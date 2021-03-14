@@ -5,7 +5,7 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h3 class="card-title">All Published Notice</h3>
+                <h3 class="card-title">All Published Gallery Photo</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -13,9 +13,9 @@
                     <thead>
                         <tr>
                             <th>Sl</th>
-                            <th>Notice Title</th>
+                            <th>Photo Title</th>
                             <th>Photo</th>
-                            <th style="width:162px;">Action</th>
+                            <th style="width:200px;">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,7 +28,7 @@
                                 {{-- <td>{{ $gallery->created_at->format('d-m-Y') }}</td> --}}
                                 <td>
                                 <a href="{{ url('/photo-gallery/edit/'.$gallery->id) }}" class="btn btn-outline-success"> <i class="fas fa-eye"></i> Edit</a>
-                                <a href="{{ url('/photo-gallery/delete/'.$gallery->id) }}" class="btn btn-outline-danger"> <i class="fas fa-trash-alt"></i> Delete</a>
+                                <a onclick="return confirm('Arer You Sure to Delete')" href="{{ url('/photo-gallery/delete/'.$gallery->id) }}" class="btn btn-outline-danger"> <i class="fas fa-trash-alt"></i> Delete</a>
                                 </td>
                             </tr>
                         @endforeach

@@ -1,48 +1,169 @@
 @extends('layouts.frontend')
 
 @section('onlybody')
-   <div class="row">
-      <div class="col">
-         <div class="teacher-list">
-            <div class="table-responsive">
-               <table class="table table-bordered">
-                  <thead class="bg-success-one">
-                    <tr>
-                      <th>শিক্ষক ফটো</th>
-                      <th>শিক্ষকের নাম</th>
-                      <th>পদবী </th>
-                      <th>মোবাইল</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td><img src="frontend/assets/img/trainers/trainer-3.jpg" alt=""></td>
-                        <td><h4>মোঃ নজরুল ইসলাম</h4></td>
-                        <td>সহকারী শিক্ষক </td>
-                        <td>০১৭৫৪৬৮৯৫৫</td>
+  <div class="card mt-3 mt-lg-0">
+    <div class="card-header bg-success-one">
+      <h5>শিক্ষক ও কর্মচারী </h5>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col">
+           <div class="teacher-list">
+              <div class="table-responsive">
+                 <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>শিক্ষক ফটো</th>
+                        <th>শিক্ষকের নাম</th>
+                        <th>পদবী</th>
+                        <th>মোবাইল</th>
                       </tr>
-                    <tr>
-                      <td><img src="frontend/assets/img/trainers/trainer-1.jpg" alt=""></td>
-                      <td><h4>মোঃ মেরাজুল ইসলাম</h4></td>
-                      <td>শিক্ষক </td>
-                      <td>০১৬০২১৫৪২৮৫</td> 
-                    </tr>
-                    <tr>
-                     <td><img src="frontend/assets/img/trainers/trainer-2.jpg" alt=""></td>
-                      <td><h4>মোঃ শাহিন আলম </h4></td>
-                      <td>শিক্ষক </td>
-                      <td>০১৫০১২৪৫৭৫৫</td>
-                    </tr>
-                    <tr>
-                      <td><img src="frontend/assets/img/trainers/trainer-3.jpg" alt=""></td>
-                      <td><h4>মোঃ নজরুল ইসলাম</h4></td>
-                      <td>সহকারী শিক্ষক </td>
-                      <td>০১৭৫৪৬৮৯৫৫</td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-         </div>
-      </div>
-   </div>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/mannan.jpg') }}" alt=""></td>
+                        <td><h4>আলহাজ্ব মোঃ আব্দুল মান্নান</h4></td>
+                        <td>সহকারী প্রধান শিক্ষক</td>
+                        <td>০১৭২৫০২০৮০৯</td>
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/najmul.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ নাজমুল আলম</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭৮৫৪০৯১৮০</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/mahabubur.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ মাহাবুবুর রহমান</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭৪০১৮৫৫৫৬</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/sahin.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ শাহীনূর ইসলাম</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৬০২১৫৪২৮৫</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/meraj.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ মেরাজুল ইসলাম</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৬০২১৫৪২৮৫</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/nazrul.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ নজরুল ইসলাম</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭৪০৮২৭০১০</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/badsha.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ গোলাম মুর্ত্তজা বাদশা(ক্রীড়া)</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭৪০৮৩৬৬৮৮</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/1.jpg') }}" alt=""></td>
+                        <td><h4>দুলাল চন্দ্র পাল</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৬০২১৫৪২৮৫</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/1.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ মিজানুর রহমান</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭১৩৭২১৫৪৫</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/1.jpg') }}" alt=""></td>
+                        <td><h4>ভবেশ সরেণ</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭৬৭৫৫২৮৭১</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/mehedi.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ মেহেদী হাসান</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭১৭৭৩০০২৩</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/miyarul.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ মিয়ারুল ইসলাম</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭৬৫০২৫৫১০</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/1.jpg') }}" alt=""></td>
+                        <td><h4>মুহাম্মদ মনোয়ার হুসাইন</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭১৭০১২৮৫০</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/tuhin.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ সানোয়ার পারভেজ তুহীন(খন্ডকালীন)</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭৭৭৯৫১৭৪৭</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/1.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ রফিকুল ইসলাম</h4></td>
+                        <td>সহকারী গ্রন্থাগারিক</td>
+                        <td>০১৭১৩৮৬০৫৩০</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/masum.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ মাসুম বিল্লাহ</h4></td>
+                        <td>অফিস সহকারী</td>
+                        <td>০১৭৬৭৪০০৩৬৬</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/jamal.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ জামাল উদ্দিন</h4></td>
+                        <td>অফিস সহায়ক</td>
+                        <td>০১৬০২১৫৪২৮৫</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/nasir.jpg') }}" alt=""></td>
+                        <td><h4>মোঃ নাসিরুল আওয়াল</h4></td>
+                        <td>অফিস সহায়ক</td>
+                        <td>০১৭৯৮১১৩৫৩১</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/nurnahar.jpg') }}" alt=""></td>
+                        <td><h4>মোসাঃ নুরুন্নাহার</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭৮৯৮৭৬৯২১</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/1.jpg') }}" alt=""></td>
+                        <td><h4>আনসারা বেগম</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৬০২১৫৪২৮৫</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/1.jpg') }}" alt=""></td>
+                        <td><h4>মোসাঃ আতিয়া পারভীন</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৭৭৬৭২৯১৪২</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/jhorna.jpg') }}" alt=""></td>
+                        <td><h4>মোসাঃ খালেদা পারভীন</h4></td>
+                        <td>সহকারী শিক্ষক</td>
+                        <td>০১৬০২১৫৪২৮৫</td> 
+                      </tr>
+                      <tr>
+                        <td><img src="{{ asset('frontend/assets/img/teacher/1.jpg') }}" alt=""></td>
+                        <td><h4>মোসাঃ নাদিরা বেগম</h4></td>
+                        <td>আয়া/অফিস সহায়ক</td>
+                        <td>০১৭৫৩৫২১৫৩৭</td> 
+                      </tr>
+                    </tbody>
+                  </table>
+              </div>
+           </div>
+        </div>
+     </div>
+    </div>
+  </div>
 @endsection

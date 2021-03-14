@@ -9,7 +9,7 @@
      <div class="col pt-2">
       <marquee scrollamount='2' direction="Left" onmouseover="this.stop()" onmouseout="this.start()">
         @foreach ($data as $item)
-        <span class="mr-3"><a href="{{ asset($item->notice_file) }}"><i class="icofont-hand-right"></i> {{ $item->notice_title }}</a></span>             
+        <span class="mr-3"><a target="_blank" href="{{ asset($item->notice_file) }}"><i class="icofont-hand-right"></i> {{ $item->notice_title }}</a></span>             
         @endforeach
       </marquee>
      </div>
@@ -62,14 +62,13 @@
   <div class="welcome-message">
     <div class="card">
         <div class="card-header bg-success-one">
-          <p class="h5 text-light">দামকুড়া হাট উচ্চ বিদ্যালয়ে স্বাগতম</p>
+          <h2 class="text-light h5">দামকুড়া হাট উচ্চ বিদ্যালয়ে স্বাগতম</h2>
         </div>
         <div class="card-body">
-          <p> কালের সাক্ষী হয়ে দাঁড়িয়ে আছে দামকুড়া হাট উচ্চ বিদ্যালয়। </p>
-          <p>এই বিদ্যালয়ে প্রত্যক্ষ করেছে ব্রিটিশ ভারত আমল, পাকিস্তান আমল স্বাধীন এবং স্বাধীন বাংলাদেশ।  দামকুড়া হাট প্রাইমারি স্কুল প্রতিষ্ঠার মধ্যে দিয়ে যাত্রা শুরু হলেও কালক্রমে মাইনর ইংলিশ স্কুল (ME SCHOLL) এবং পরবর্তীতে এই উচ্চ বিদ্যাপীঠ প্রতিষ্ঠিত হয়। অতঃপর দামকুড়া হাট বালিকা বিদ্যালয়, কলেজ, কারিগরি বিদ্যালয়, মাদ্রাসা, এবং মর্নিংসান পাবলিক স্কুল, ইসলামী একাডেমি, এমআর প্রভাত বিদ্যালয় ও রিভারডেল নামে চারটি স্কুল হয়েছে। এই এলাকায় এই সকল প্রতিষ্টানে অস্তিত্ব মানুষের সচেতনতা ও আলোকিত মানুষের তৈরির প্রচেষ্টার নির্দেশক। কিন্তু প্রসঙ্গ দামকুড়া হাট উচ্চ বিদ্যালয় প্রতিষ্ঠার ইতিবৃত্ত। আর এ জন্যই আমাদের একটু পিছনে যেতে হবে। </p>
-          <p>শতাধিক বছের পূর্বে এলাকার সর্ব শ্রেণীর মানুষ একতা বদ্ধ হয়ে বর্তমানে (CMES) কারিগরি বিদ্যালয় এর স্থানে প্রাচীন এক বিশাল আম গাছের নিচে দামকুড়া হাট প্রাইমারি স্কুল প্রতিষ্ঠা করেন। নিজেদের ওই অর্থয়নে কাঠের খুঁটি বাসের বেড়া দিয়ে কোনো রকম স্কুল যাত্রা শুরু হয়। অতঃপর কাশিয়াডাঙ্গার জমিদার রাম রঞ্জন মল্লিক এই স্কুলের পৃষ্ঠপোষকতায় এগিয়ে আসেন। তিনি সরল মনে এলাকাবাসীর সামনে চাহিদা অনুযায়ী কাঠের জন্য অনেক গাছ দান করেন। ১৯২৩ সালে স্কুলের নাম করণ করা হয় RRME স্কুল (রামরঞ্জন মাইনর ইংলিশ স্কুল)। এরপর নামকরণ ME স্কুল এবং পরবর্তীতে দামকুড়া হাট সরকারি প্রাথমিক বিদ্যালয়। ছাত্ররা প্রাইমারি স্কুলের কোর্স পাঠ শেষ করার পর উচ্চ বিদ্যালয়ে পড়ার জন্য এলাকায় উচ্চ বিদ্যালয়ের অভাব এক নতুন সমস্যা হিসাবে আবির্ভুত হয়। এই অবস্থায় হাতে গোনা কয়েক জন ছাত্র রাজশাহী লোকনাথ উচ্চ বিদ্যালয়ে ভর্তি হতে বাধ্য হয়। এসকল ছাত্রের মধ্যে জনাব হানিফ উদ্দিন চৌধুরী, আব্দুল আজিজ সরকার ও জনাব বশির উদ্দিনের নাম তথ্য হিসেবে পাওয়া  যাই। শুরু হলো দামকুড়া হাট উচ্চ বিদ্যালয় প্রতিষ্ঠার জন্য অক্লান্ত প্ররিশ্রম। এ প্রচেষ্টা এবং আয়োজন আগে থেকেই শুরু হলেও ১৯৪৭ সালের ২রা ফেব্রুয়ারী কাগজে কলমে স্কুল প্রতিষ্ঠত হয় বলে নথি পত্রে পরিলক্ষিত হয়।</p>
-          <p>মাইনর স্কুল এবং হাই স্কুল প্রতিষ্ঠার জন্য এলাকার সর্ব শ্রেণীর মানুষের পাশাপাশি বিশেষ করে যারা সংগঠন ও পথ প্রদর্শক ছিলেন তাদের অনেক জন্ম যন্ত্রনা সইতে হয়েছে। মাইনর স্কুল পুরোটাই ব্রিটিস আমলে এবং হাই স্কুল ব্রিটিস আমলে শেষ মুহূর্তে এবং পাকিস্তানী আমলের সূচনা লগ্নে প্রতিষ্ঠত হয়। সুতরাং এই স্কুল সেসময় বিশেষ কোনো সরকারি সহযোগিতা পাইনি। ভরসা এলাকাবাসির দানখয়রাত। তবুও থেমে থাকেনি অগ্রযাত্রা-বয়ে চলেছে নিরন্তর। </p>
-          <span><a class="text-danger" href="{{ url('/about') }}">বিস্তারিত <i class="icofont-arrow-right"></i></a></span>
+          <p>"দোলনা থেকে কবর পর্যন্ত জ্ঞান অর্জন কর" </p>
+
+          <p>কাশিয়াডাঙ্গার জমিদার রাম রঞ্জন মল্লিক দামকুড়া হাট উচ্চ বিদ্যালয়ের পৃষ্ঠপোষকতা করেন। ১৯২৩ সালে স্কুলের নাম করণ করা হয় RRME স্কুল (রামরঞ্জন মাইনর ইংলিশ স্কুল)। এরপর নামকরণ ME স্কুল এবং পরবর্তীতে দামকুড়া হাট সরকারি প্রাথমিক বিদ্যালয়। ছাত্ররা প্রাইমারি স্কুলের কোর্স পাঠ শেষ করার পর উচ্চ বিদ্যালয়ে পড়ার জন্য এলাকায় উচ্চ বিদ্যালয়ের অভাব এক নতুন সমস্যা হিসাবে আবির্ভুত হয়। এই অবস্থায় হাতে গোনা কয়েক জন ছাত্র রাজশাহী লোকনাথ উচ্চ বিদ্যালয়ে ভর্তি হতে বাধ্য হয়। এসকল ছাত্রের মধ্যে জনাব হানিফ উদ্দিন চৌধুরী, আব্দুল আজিজ সরকার ও জনাব বশির উদ্দিনের নাম তথ্য হিসেবে পাওয়া  যাই। শুরু হলো দামকুড়া হাট উচ্চ বিদ্যালয় প্রতিষ্ঠার জন্য অক্লান্ত প্ররিশ্রম। এ প্রচেষ্টা এবং আয়োজন আগে থেকেই শুরু হলেও ১৯৪৭ সালের ২রা ফেব্রুয়ারী কাগজে কলমে স্কুল প্রতিষ্ঠত হয় বলে নথি পত্রে পরিলক্ষিত হয়।</p>
+          <p>মাইনর স্কুল এবং হাই স্কুল প্রতিষ্ঠার জন্য এলাকার সর্ব শ্রেণীর মানুষের পাশাপাশি বিশেষ করে যারা সংগঠন ও পথ প্রদর্শক ছিলেন তাদের অনেক জন্ম যন্ত্রনা সইতে হয়েছে। মাইনর স্কুল পুরোটাই ব্রিটিস আমলে এবং হাই স্কুল ব্রিটিস আমলে শেষ মুহূর্তে এবং পাকিস্তানী আমলের সূচনা লগ্নে প্রতিষ্ঠত হয়। সুতরাং এই স্কুল সেসময় বিশেষ কোনো সরকারি সহযোগিতা পাইনি। ভরসা এলাকাবাসির দানখয়রাত। তবুও থেমে থাকেনি অগ্রযাত্রা-বয়ে চলেছে নিরন্তর... <span><a target="_blank" href="{{ url('/about') }}">বিস্তারিত <i class="icofont-arrow-right"></i></a></span></p>
           </p>
         </div>
       </div>
@@ -82,19 +81,19 @@
 <div class="head-message mt-5">
    <div class="card">
       <div class="card-header bg-success-one">
-        <p class="h5 text-light">প্রধান শিক্ষক </p>
+        <h5 class="text-light">প্রধান শিক্ষক <span class="text-center">মোঃ ফেরদৌশ আলী</span></h5>
       </div>
       <div class="card-body">
         <div class="row no-gutters">
           <div class="col-md-4">
-            <img src="frontend/assets/img/head-teacher.jpg" class="card-img" alt="...">
+            <img src="{{ asset('frontend/assets/img/head-teacher.jpg') }}" class="card-img" alt="...">
           </div>
           <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">মোঃ ফেরদৌস আলী</h5>
-              <p class="card-text"> এই যে পবিত্র ভূমি, সবুজ চত্বর সারি সারি বৃক্ষরাজি, ছায়া সুনিবিড় শ্যামল মায়াবী এক আভরণ ছড়িয়ে বিরাজমান , পূর্বে মহাসড়ক রাজশাহী শহর থেকে কাঁকন হাট হয়ে চলে গেছে আরো বহুদূর। পশ্চিম পাস দিয়ে বয়ে চলেছে খাড়ি এক সময় স্রোতস্বীনি জুয়াখালি নদী দক্ষিণ দিকে দৃষ্টিনন্দন সবুজ খেলার মাঠ ও আম্রকানন, উত্তর পূর্বাংশে রয়েছে......</p>
-              <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-              <p class="card-text"><a href="{{ url('/head-message') }}">প্রধান শিক্ষকের বানী </a> <i class="icofont-arrow-right"></i></p>
+            <div class="card-body bani-margin">
+              <p class="text-center mb-1">"বাণী"</p>
+              {{-- <h5 class="card-title">মোঃ ফেরদৌশ আলী</h5> --}}
+              <p>আ<span style="margin-right: .5px;margin-top:.5px">স্</span>সালামুআলাইকুম, প্রিয় শিক্ষার্থী, অভিভাবক অভিনন্দন ও শুভেচ্ছা। এই যে পবিত্র ভূমি,এই সবুজ চত্বর সারি সারি বৃক্ষরাজি, ছায়া সুনিবিড় শ্যামল মায়াবী এক আভরণ ছড়িয়ে বিরাজমান, পূর্বে মহাসড়ক রাজশাহী শহর থেকে কাঁকন হাট হয়ে চলে গেছে আরো বহুদূর। পশ্চিম পাস দিয়ে বয়ে চলেছে খাড়ি এক সময় স্রোতস্বীনি জুয়াখালি নদী, দক্ষিণ দিকে দৃষ্টিনন্দন সবুজ খেলার মাঠ ও আম্রকানন, উত্তর পূর্বাংশে রয়েছে দামকুড়া হাট (যা এই অঞ্চলের মানুষের ভাগ্যোন্নয়নের বাণিজ্যিক প্রাণ কেন্দ্র ) এর মধ্যেই তিন দিকে ঘেরা ইংরেজি 'U' অক্ষরের মত এলাকার মানুষের ভালোবাসা, দানে, শ্রমে, ঘামে, অর্থে গড়ে ওঠা নয়নাভিরাম দ্বিতল ভবন, প্রাণের শিক্ষাগৃহ- সুরম্য অট্রালিকা এ অঞ্চলের....</p>
+              <p class="card-text"><a target="_blank" href="{{ url('/head-message') }}">প্রধান শিক্ষকের বানী </a> <i class="icofont-arrow-right"></i></p>
             </div>
           </div>
         </div>
@@ -129,8 +128,8 @@
        <div class="card-body pb-4" id="notice-board">
           @foreach ($data as $item)
           <p class="card-text">
-            <a href="{{ asset($item->notice_file) }}">{{ $item->notice_title }} <i class="icofont-arrow-right"></i>
-            <span class="float-right text-success"><i class="icofont-calendar mx-2"></i>{{ $item->created_at->format('d M Y') }}</span></a>
+            <a target="_blank" href="{{ asset($item->notice_file) }}">{{ $item->notice_title }} <i class="icofont-arrow-right"></i>
+            <span class="float-right text-info"><i class="icofont-calendar mx-2"></i>{{ \Carbon\Carbon::parse($item->created_at)->format('d M Y') }}</span></a>
           </p><hr>
           @endforeach
        </div>
@@ -141,6 +140,26 @@
 {{-- Right Sidebar Second Block --}}
 {{-- Techer Login --}}
 @section('right-section-two')
+<div class="card mt-5">
+   <div class="card-header bg-success-one">
+       <h5 class="text-light text-center">ই-সেবা</h5>
+   </div>
+   <div class="card-body pb-4" id="notice-board">
+      <ul class="list-unstyled">
+        <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="https://www.alorpathshala.org/">ই-লাইব্রেরী</a></li><hr>
+        <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="https://edutubebd.com/">ই-লার্নিং উপকরণ এবং ই-ম্যানুয়াল</a></li><hr>
+        <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="https://eboardresults.com/v2/home">পাবলিক পরীক্ষার ফলাফল</a></li><hr>
+        <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="http://www.banbeis.gov.bd/">বাংলাদেশ শিক্ষাতথ্য ও পরিসংখ্যান ব্যুরো (ব্যানবেইস)</a></li><hr>
+        <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="http://www.shed.gov.bd/site/page/c3d62652-3c47-462e-bc2f-5579400ab76a/%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%E0%A6%AC%E0%A7%8B%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%B8%E0%A6%AE%E0%A7%82%E0%A6%B9-">সকল শিক্ষা বোর্ড</a></li><hr>
+        <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="https://www.nctb.gov.bd/">জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (এনসিটিবি)</a></li>
+      </ul>
+   </div>
+</div>
+@endsection
+
+{{-- Right Sidebar Third Block --}}
+{{-- E-Sheba --}}
+@section('right-section-three')
 <div class="card mt-5">
    <div class="card-header bg-success-one">
        <h5 class="text-light text-center">শিক্ষক লগইন </h5>
@@ -167,6 +186,26 @@
            </div>
            <button type="submit" class="btn bg-success-one text-light">সাবমিট </button>
        </form>
+   </div>
+</div>
+@endsection
+
+{{-- Right Sidebar Four Block --}}
+{{-- Visitor Counter --}}
+@section('right-section-four')
+<div class="card mt-5">
+   <div class="card-header bg-success-one">
+       <h5 class="text-light text-center">ভিজিটর সংখ্যা</h5>
+   </div>
+   <div class="card-body pb-4" id="notice-board">
+      {{-- website hit counter --}}
+      <div class="text-center">
+        {{-- <a target="_blank" href="https://www.freecounterstat.com" title="website hit counter"><img src="https://counter8.stat.ovh/private/freecounterstat.php?c=kawhzqk2sywbd7ckbub4jc6mb27q2hgh" border="0" title="website hit counter" alt="website hit counter"></a> --}}
+        <!-- hitwebcounter Code START -->
+        <a target="_blank" href="https://www.hitwebcounter.com" target="_blank">
+        <img height="32px" src="https://hitwebcounter.com/counter/counter.php?page=7743290&style=0025&nbdigits=8&type=ip&initCount=0" title="Website Unique Visitor Counter" Alt="web counter" border="0" /></a> 
+      </div>
+
    </div>
 </div>
 @endsection
