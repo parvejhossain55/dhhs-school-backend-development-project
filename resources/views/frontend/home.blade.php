@@ -26,22 +26,30 @@
        <li data-target="#demo" data-slide-to="0" class="active"></li>
        <li data-target="#demo" data-slide-to="1"></li>
        <li data-target="#demo" data-slide-to="2"></li>
+       {{-- <li data-target="#demo" data-slide-to="3"></li> --}}
+       {{-- <li data-target="#demo" data-slide-to="4"></li> --}}
      </ul>
 
      <!-- The slideshow -->
      <div class="carousel-inner">
        <div class="carousel-item active">
+         <img src="{{ asset('frontend/assets/img/carousel/slider5.jpg') }}" alt="Los Angeles">
+       </div>
+       <div class="carousel-item">
+         <img src="{{ asset('frontend/assets/img/carousel/slider6.jpg') }}" alt="Los Angeles">
+       </div>
+       <div class="carousel-item">
          <img src="{{ asset('frontend/assets/img/carousel/slider1.jpg') }}" alt="Los Angeles">
        </div>
-       <div class="carousel-item">
+       {{-- <div class="carousel-item">
          <img src="{{ asset('frontend/assets/img/carousel/slider2.jpg') }}" alt="Chicago">
-       </div>
-       <div class="carousel-item">
+       </div> --}}
+       {{-- <div class="carousel-item">
          <img src="{{ asset('frontend/assets/img/carousel/slider3.jpg') }}" alt="New York">
-       </div>
-       <div class="carousel-item">
+       </div> --}}
+       {{-- <div class="carousel-item">
          <img src="{{ asset('frontend/assets/img/carousel/slider4.jpg') }}" alt="New York">
-       </div>
+       </div> --}}
      </div>
 
      <!-- Left and right controls -->
@@ -89,9 +97,9 @@
             <img src="{{ asset('frontend/assets/img/head-teacher.jpg') }}" class="card-img" alt="...">
           </div>
           <div class="col-md-8">
-            <div class="card-body bani-margin">
-              <p class="text-center mb-1">"বাণী"</p>
-              {{-- <h5 class="card-title">মোঃ ফেরদৌশ আলী</h5> --}}
+            <div class="card-body ">
+              <p class="text-center mb-1"><b>"বাণী"</b></p>
+              <p class="text-center">বিসমিল্লাহির রাহমানির রাহিম</p>
               <p>আ<span style="margin-right: .5px;margin-top:.5px">স্</span>সালামুআলাইকুম, প্রিয় শিক্ষার্থী, অভিভাবক অভিনন্দন ও শুভেচ্ছা। এই যে পবিত্র ভূমি,এই সবুজ চত্বর সারি সারি বৃক্ষরাজি, ছায়া সুনিবিড় শ্যামল মায়াবী এক আভরণ ছড়িয়ে বিরাজমান, পূর্বে মহাসড়ক রাজশাহী শহর থেকে কাঁকন হাট হয়ে চলে গেছে আরো বহুদূর। পশ্চিম পাস দিয়ে বয়ে চলেছে খাড়ি এক সময় স্রোতস্বীনি জুয়াখালি নদী, দক্ষিণ দিকে দৃষ্টিনন্দন সবুজ খেলার মাঠ ও আম্রকানন, উত্তর পূর্বাংশে রয়েছে দামকুড়া হাট (যা এই অঞ্চলের মানুষের ভাগ্যোন্নয়নের বাণিজ্যিক প্রাণ কেন্দ্র ) এর মধ্যেই তিন দিকে ঘেরা ইংরেজি 'U' অক্ষরের মত এলাকার মানুষের ভালোবাসা, দানে, শ্রমে, ঘামে, অর্থে গড়ে ওঠা নয়নাভিরাম দ্বিতল ভবন, প্রাণের শিক্ষাগৃহ- সুরম্য অট্রালিকা এ অঞ্চলের....</p>
               <p class="card-text"><a target="_blank" href="{{ url('/head-message') }}">প্রধান শিক্ষকের বানী </a> <i class="icofont-arrow-right"></i></p>
             </div>
@@ -150,7 +158,7 @@
         <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="https://edutubebd.com/">ই-লার্নিং উপকরণ এবং ই-ম্যানুয়াল</a></li><hr>
         <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="https://eboardresults.com/v2/home">পাবলিক পরীক্ষার ফলাফল</a></li><hr>
         <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="http://www.banbeis.gov.bd/">বাংলাদেশ শিক্ষাতথ্য ও পরিসংখ্যান ব্যুরো (ব্যানবেইস)</a></li><hr>
-        <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="http://www.shed.gov.bd/site/page/c3d62652-3c47-462e-bc2f-5579400ab76a/%E0%A6%B6%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B7%E0%A6%BE-%E0%A6%AC%E0%A7%8B%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%B8%E0%A6%AE%E0%A7%82%E0%A6%B9-">সকল শিক্ষা বোর্ড</a></li><hr>
+        <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="http://seo.paba.rajshahi.gov.bd/">উপজেলা মাধ্যমিক শিক্ষা অফিস রাজশাহী</a></li><hr>
         <li><i class="icofont-listine-dots mr-2 text-info"></i><a target="_blank" href="https://www.nctb.gov.bd/">জাতীয় শিক্ষাক্রম ও পাঠ্যপুস্তক বোর্ড (এনসিটিবি)</a></li>
       </ul>
    </div>

@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class GalleryController extends Controller
 {
     //
     public function index()
     {
-        $gallaries = Gallery::latest()->get();
-        return view('backend.show-gallery', compact('gallaries'));
+        $this->data['gallaries'] = DB::table('galleries')->latest()->get();
+        return view('backend.show-gallery', $this->data);
     }
 
     public function create()

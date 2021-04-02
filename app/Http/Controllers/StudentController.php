@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class StudentController extends Controller
 {
     // view all student
     public function index()
     {
-        $students = Student::all();
-        return view('backend.student.total-student', compact('students'));
+        $this->data['students'] = DB::table('students')->get();
+        return view('backend.student.total-student', $this->data);
     }
     // form view
     public function create()
@@ -26,6 +27,7 @@ class StudentController extends Controller
             'sfname' => 'required',
             'smname' => 'required',
             'gender' => 'required',
+            'gurdian_mobile' => 'required',
             'roll' => 'required',
             'class' => 'required',
             'section' => 'required',
@@ -37,6 +39,7 @@ class StudentController extends Controller
             'sfname' => $request->sfname,
             'smname' => $request->smname,
             'gender' => $request->gender,
+            'gurdian_mobile' => $request->gurdian_mobile,
             'roll' => $request->roll,
             'class' => $request->class,
             'section' => $request->section,
@@ -74,7 +77,7 @@ class StudentController extends Controller
             'section' => $request->section,
             'address' => $request->address
         ]);
-        return redirect()->back()->with('success', 'Student Successfully Edited');
+        return redirect()->route('total.student')->with('success', 'Student Successfully Edited');
     }
     // student delete
     public function delete($id)

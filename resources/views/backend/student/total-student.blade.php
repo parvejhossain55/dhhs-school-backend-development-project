@@ -14,11 +14,12 @@
                         <tr>
                             <th>Sl</th>
                             <th>Name</th>
-                            <th>Father Name</th>
-                            <th>Mother Name</th>
                             <th>Gender</th>
                             <th>Roll</th>
                             <th>Class</th>
+                            <th>Mobile</th>
+                            <th>Mother Name</th>
+                            <th>Father Name</th>
                             <th>Section</th>
                             <th>Action</th>
                         </tr>
@@ -30,12 +31,13 @@
                             <tr>
                                 <th>{{ $i++ }}</th>
                                 <td>{{ $student->sname }}</td>
-                                <td>{{ $student->sfname }}</td>
-                                <td>{{ $student->smname }}</td>
                                 <td>{{ $student->gender }}</td>
                                 <td>{{ $student->roll }}</td>
                                 <td>{{ $student->class }}</td>
-                                <td>{{ $student->section == 1 ? 'Section A' : 'Section B' }}</td>
+                                <td>{{ $student->gurdian_mobile }}</td>
+                                <td>{{ $student->sfname }}</td>
+                                <td>{{ $student->smname }}</td>
+                                <td>{{ $student->section == 1 ? 'A' : 'B' }}</td>
                                 <td>
                                     <a href="{{ url('/student/edit/'.$student->id) }}" class="btn btn-outline-success"> <i class="fas fa-eye"></i> View</a>
                                     <a onclick="return confirm('Are You Sure to Deleted Student Data')" href="{{ url('/student/delete/'.$student->id) }}" class="btn btn-outline-danger"> <i class="fas fa-trash-alt"></i> Delete</a>

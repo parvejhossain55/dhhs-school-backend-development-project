@@ -25,7 +25,7 @@
                               <tr>
                                  <td>{{ $i++ }}</td>
                                  <td>{{ $result->result_title }}</td>
-                                 <td>{{ $result->created_at->format('d-m-Y') }}</td>
+                                 <td>{{ \Carbon\Carbon::parse($result->created_at)->format('d-m-Y') }}</td>
                                  <td>
                                     <a href="{{ asset($result->result_file) }}" class="btn btn-outline-info"> <i class="fas fa-eye"></i> View</a>
                                     <a href="{{ url('/result/edit/'.$result->id) }}" class="btn btn-outline-success"> <i class="fas fa-pen"></i> Edit</a>

@@ -61,7 +61,7 @@
                                 <ul>
                                     <li><a href="{{ url('/head-message') }}">প্রধান শিক্ষকের বানী</a></li>
                                     <li><a href="{{ url('/about') }}">ইতিহাস </a></li>
-                                    <li><a href="{{ url('/sriti-kotha') }}">সৃতি কথা</a></li>
+                                    {{-- <li><a href="{{ url('/sriti-kotha') }}">সৃতি কথা</a></li> --}}
                                     <li><a href="{{ url('/achivement') }}">আমাদের অর্জন </a></li>
                                 </ul>
                             </li>
@@ -69,8 +69,8 @@
                             <li class="drop-down {{ Request::path() == 'result' ? 'active':'' }}"><a href="javascript:void(0)">একাডেমিক </a>
                                 <ul>
                                     <li><a href="{{ route('result') }}">রেজাল্ট </a></li>
-                                    <li><a href="javascript:void(0)">ক্লাস রুটিন</a></li>
-                                    <li><a href="javascript:void(0)">সিলেবাস </a></li>
+                                    {{-- <li><a href="javascript:void(0)">ক্লাস রুটিন</a></li>
+                                    <li><a href="javascript:void(0)">সিলেবাস </a></li> --}}
                                 </ul>
                             </li>
                             <li class="{{ Request::path() == 'photo-gallery' ? 'active' : '' }}"><a href="{{ url('/photo-gallery') }}">ফটো গ্যালারি </a></li>
@@ -161,6 +161,7 @@
                                     দামকুড়া হাট - ৬০০০ <br>
                                     পবা, রাজশাহী<br><br>
                                     <strong>মোবাইল : </strong> +৮৮ ০১৭৫২-২৫৪৬৯৫<br>
+                                    <strong>মোবাইল : </strong> +৮৮ ০১৭৬১-৫৩৩০০০<br>
                                     <strong>ইমেইল :</strong> info@example.com<br>
                                 </p>
                             </div>
@@ -206,7 +207,8 @@
                 <div class="d-block py-4 align-items-center" id="footer-text">
                     <div class="text-center">
                         <div class="copyright" style="font-size: 15px;">
-                            &copy; Copyright @php($date = date('Y')){{ $date }} - All Rights Reserved | <span>Design & Developed by : <a class="text-danger" target="_blank" href="https://www.facebook.com/parvej.hossain.155">Parvej Hossain</a></span>
+                            &copy; Copyright @php($date = date('Y')){{ $date }} - All Rights Reserved | <span>Design & Developed by : <a class="text-danger" target="_blank" href="http://bit.ly/3vHOr4z">Parvej Hossain</a></span>
+                            {{-- &copy; Copyright @php($date = date('Y')){{ $date }} - All Rights Reserved | <span>Design & Developed by : <a class="text-danger" target="_blank" href="https://www.facebook.com/parvej.hossain.155">Parvej Hossain</a></span> --}}
                         </div>
                     </div>
 

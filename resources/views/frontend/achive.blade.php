@@ -4,7 +4,7 @@
 <div class="student-of-six">
     <div class="card mt-3 mt-lg-0">
         <div class="card-header bg-success-one">
-            <p class="h5 text-light">বিদ্যালয়ের সকল অর্জন সমূহ </p>
+            <p class="h5 text-light">বিদ্যালয়ের সকল অর্জন </p>
         </div>
         <div class="card-body">
          {{-- school achivement --}}

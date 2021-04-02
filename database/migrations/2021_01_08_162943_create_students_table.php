@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
             $table->string('sfname');
             $table->string('smname');
             $table->string('gender');
+            $table->string('gurdian_mobile');
             $table->string('roll');
             $table->string('class');
             $table->string('section');

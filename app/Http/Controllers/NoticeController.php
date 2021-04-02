@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Notice;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NoticeController extends Controller
 {
     // Show All Notice
     public function index()
     {
-        $notices = Notice::latest()->get();
-        return view('backend.show-notice', compact('notices'));
+        $this->data['notices'] = DB::table('notices')->get();
+        return view('backend.show-notice', $this->data);
     }
     
     // Show Notice upload page in Admin panel

@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Result;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ResultController extends Controller
 {
     public function index()
     {
-        $results = Result::latest()->get();
-        return view('backend.result.index', compact('results'));
+        $this->data['results'] = DB::table('results')->latest()->get();
+        return view('backend.result.index', $this->data);
     }
 
     public function create()

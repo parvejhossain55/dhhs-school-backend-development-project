@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\Achivement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AchivementController extends Controller
 {
     //
     public function index()
     {
-        $achives = Achivement::all();
-        return view('backend.achive.all-achive', compact('achives'));
+        $this->data['achives'] = DB::table('achivements')->get();
+        return view('backend.achive.all-achive', $this->data);
     }
 
     public function create()

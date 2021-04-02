@@ -34,7 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="index3.html" class="nav-link">Home</a>
+                    <a href="javascript:void(0)" class="nav-link">Home</a>
                 </li>
             </ul>
             <!-- SEARCH FORM -->
@@ -303,13 +303,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
                 <ul class="nav nav-treeview ml-3">
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="javascript:void(0)" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>All Syllabus</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="javascript:void(0)" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add Syllabus</p>
                         </a>
@@ -317,7 +317,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </ul>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="javascript:void(0)" class="nav-link">
                     <i class="fas fa-calendar-alt nav-icon"></i>
                     <p>
                         Class Routine
@@ -326,13 +326,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </a>
                 <ul class="nav nav-treeview ml-3">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="javascript:void(0)" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>All Routine</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">
+                        <a href="javascript:void(0)" class="nav-link">
                             <i class="far fa-circle nav-icon"></i>
                             <p>Add Routine</p>
                         </a>
@@ -457,8 +457,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                     <div class="col-12 col-sm-6 col-md-3">
                         <div class="info-box mb-3">
-                            <span class="info-box-icon bg-success elevation-1"><i
-                                    class="fas fa-calendar-check"></i></span>
+                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-images"></i></span>
 
                             <div class="info-box-content">
                                 <span class="info-box-text">Photo Gallery</span>

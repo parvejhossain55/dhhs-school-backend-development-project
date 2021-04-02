@@ -66,6 +66,12 @@
                      </div>
                   </div>
                   <div class="form-row my-4">
+                     <div class="col-md-6">
+                        <div class="form-group">
+                           <label for="exampleFormControlSelect6">Guddian Mobile</label>
+                           <input type="text" class="form-control" name="gurdian_mobile" placeholder="Gurdian Mobile Number">
+                         </div>
+                     </div>
                      <div class="col-md-3">
                         <div class="form-group">
                            <label for="exampleFormControlSelect3">Class</label>
@@ -93,7 +99,9 @@
                            <div class="text-danger">{{ $message }}</div>
                         @enderror
                      </div>
-                     <div class="col-md-6">
+                  </div>
+                  <div class="form-row my-4">
+                     <div class="col-md-12">
                         <div class="form-group">
                            <label for="exampleFormControlSelect5">Address</label>
                            <textarea class="form-control" name="address" id="exampleFormControlSelect5" cols="30" rows="1"></textarea>
